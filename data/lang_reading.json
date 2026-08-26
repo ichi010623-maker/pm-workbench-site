@@ -185,7 +185,69 @@
         "content": "Meditation can help reduce stress and improve focus. Start with just a few minutes a day and gradually increase your practice.",
         "translation": "冥想可以帮助减少压力并提高专注力。每天开始只需几分钟，并逐渐增加你的练习。"
       }
+    ],
+    "2026-08-27": [
+      {
+        "level": "入门",
+        "title": "Smart Tech",
+        "content": "Smartphones make life easier with apps and features like GPS and cameras.",
+        "translation": "智能手机通过应用程序和功能如GPS和相机使生活更加便捷。"
+      },
+      {
+        "level": "进阶",
+        "title": "City Life",
+        "content": "Living in a city means being close to public transport and a variety of shops.",
+        "translation": "在城市生活意味着靠近公共交通和各种商店。"
+      },
+      {
+        "level": "挑战",
+        "title": "Entrepreneurship",
+        "content": "Starting a business requires creativity, research, and a good business plan.",
+        "translation": "创业需要创造力、研究和一个好的商业计划。"
+      },
+      {
+        "level": "入门",
+        "title": "Cultural Customs",
+        "content": "Understanding local customs can help you fit in during your travels.",
+        "translation": "了解当地习俗可以帮助你在旅行中融入。"
+      },
+      {
+        "level": "进阶",
+        "title": "Healthy Habits",
+        "content": "Drinking plenty of water and exercising regularly are good for your health.",
+        "translation": "多喝水和定期锻炼对你的健康有益。"
+      },
+      {
+        "level": "挑战",
+        "title": "Global Warming",
+        "content": "Reducing carbon emissions is crucial to fight climate change.",
+        "translation": "减少碳排放是应对气候变化的至关重要的措施。"
+      },
+      {
+        "level": "入门",
+        "title": "Mind Games",
+        "content": "Puzzles and brain teasers improve cognitive abilities.",
+        "translation": "谜题和脑筋急转弯可以提高认知能力。"
+      },
+      {
+        "level": "进阶",
+        "title": "World Cuisine",
+        "content": "Trying different foods can be a delightful experience.",
+        "translation": "尝试不同的食物可以是一次愉快的体验。"
+      },
+      {
+        "level": "挑战",
+        "title": "Space Exploration",
+        "content": "Sending humans to Mars could be possible within our lifetime.",
+        "translation": "在人类有生之年将人类送往火星是可能的。"
+      },
+      {
+        "level": "入门",
+        "title": "Art Appreciation",
+        "content": "Looking closely at paintings can reveal hidden meanings.",
+        "translation": "仔细观察画作可以揭示隐藏的含义。"
+      }
     ]
   },
-  "updatedAt": "2026-08-26T00:05:00+08:00"
+  "updatedAt": "2026-08-27T00:05:00+08:00"
 }
