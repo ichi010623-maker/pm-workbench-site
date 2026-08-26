@@ -233,7 +233,103 @@
           ]
         }
       ]
+    },
+    "2026-08-27": {
+      "date": "2026-08-27",
+      "mode": "rss",
+      "sources": {
+        "BBC": 0,
+        "BBC商业": 0,
+        "BBC科技": 0,
+        "Al Jazeera": 0,
+        "NPR": 10,
+        "Guardian世界": 0,
+        "Guardian科技": 0,
+        "Guardian商业": 0
+      },
+      "rssCount": 10,
+      "brief": [
+        "特朗普牛肉计划对汉堡价格影响有限",
+        "美国社交巨头Meta同意17亿美元和解",
+        "尼泊尔和中国遭遇洪水，至少75人死亡",
+        "加拿大对美国实施报复性关税",
+        "巴基斯坦医院新生儿室火灾致14死"
+      ],
+      "groups": [
+        {
+          "cat": "国际",
+          "icon": "🌍",
+          "items": [
+            {
+              "title": "特朗普牛肉计划影响有限",
+              "summary": "专家称特朗普牛肉计划对降低汉堡价格影响不大。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/nx-s1-5944265/ground-beef-trump-tariffs"
+            },
+            {
+              "title": "Meta同意17亿美元和解",
+              "summary": "Meta同意支付17亿美元解决儿童安全诉讼。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/nx-s1-5944781/meta-settlement-child-safety-lawsuit"
+            },
+            {
+              "title": "尼泊尔中国洪水致75死",
+              "summary": "尼泊尔和中国遭遇洪水，至少75人死亡，数百人失踪。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/g-s1-140211/nepal-china-floods"
+            }
+          ]
+        },
+        {
+          "cat": "商业财经",
+          "icon": "💼",
+          "items": [
+            {
+              "title": "加拿大对美实施报复性关税",
+              "summary": "加拿大宣布将对美国实施报复性关税。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/g-s1-140207/up-first-newsletter-canada-tariffs-visa-revocations-dolly-parton-nevada-voters"
+            },
+            {
+              "title": "电费飙升，电力被切断",
+              "summary": "夏天气温高，电费飙升，许多家庭因无力支付而被切断电力。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/nx-s1-5943289/electric-bills-summer-heat-oklahoma-power"
+            },
+            {
+              "title": "好莱坞票房增长，但存在隐忧",
+              "summary": "好莱坞夏季票房增长，但观众人数、电影数量和银幕数量均低于疫情前。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/nx-s1-5923629/movie-summer-box-office"
+            }
+          ]
+        },
+        {
+          "cat": "其他",
+          "icon": "🌏",
+          "items": [
+            {
+              "title": "Dolly Parton逝世",
+              "summary": "美国乡村音乐传奇人物Dolly Parton逝世，享年80岁。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/nx-s1-5944468/dolly-parton-legacy-songwriting"
+            },
+            {
+              "title": "巴基斯坦医院火灾",
+              "summary": "巴基斯坦首都一家政府医院新生儿室发生火灾，造成14名婴儿死亡。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/nx-s1-5944808/hospital-nursery-fire-kills-14-newborns-pakistan"
+            },
+            {
+              "title": "全球经济知识测试",
+              "summary": "测试你对全球经济的了解，完成这个快速的经济知识问答。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/26/g-s1-138847/planet-money-summer-school-quiz-2026"
+            }
+          ]
+        }
+      ]
     }
   },
-  "updatedAt": "2026-08-26T00:01:00+08:00"
+  "updatedAt": "2026-08-27T00:01:00+08:00"
 }
