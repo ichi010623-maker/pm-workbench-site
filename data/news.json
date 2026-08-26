@@ -1,0 +1,612 @@
+{
+  "generatedAt": "2026-08-26T07:00:00+08:00",
+  "categories": [
+    {
+      "key": "official",
+      "label": "官媒热点",
+      "icon": "🏛️"
+    },
+    {
+      "key": "hardware",
+      "label": "消费电子",
+      "icon": "📱"
+    },
+    {
+      "key": "ai",
+      "label": "AI硬件",
+      "icon": "🤖"
+    },
+    {
+      "key": "tech",
+      "label": "科技前沿",
+      "icon": "💡"
+    }
+  ],
+  "items": [
+    {
+      "id": "2026-08-26-001",
+      "category": "official",
+      "priority": 5,
+      "title": "中国发布AI伦理规范",
+      "summary": "中国发布《人工智能伦理规范》，旨在引导AI健康发展，保护个人隐私和数据安全。",
+      "source": "中国网信办",
+      "url": "http://www.cac.gov.cn/2026/0826/c_163636977.htm"
+    },
+    {
+      "id": "2026-08-26-002",
+      "category": "hardware",
+      "priority": 4,
+      "title": "华为发布新款折叠屏手机Mate X3",
+      "summary": "华为发布新款折叠屏手机Mate X3，搭载麒麟9000E芯片，支持5G网络。",
+      "source": "华为",
+      "url": "https://www.huawei.com/cn/press-release/2026/08/26/1-8438.html"
+    },
+    {
+      "id": "2026-08-26-003",
+      "category": "ai",
+      "priority": 4,
+      "title": "谷歌推出大型语言模型LaMDA",
+      "summary": "谷歌推出大型语言模型LaMDA，具备更强的语言理解和生成能力。",
+      "source": "谷歌",
+      "url": "https://www.google.com/ai/laMDA/"
+    },
+    {
+      "id": "2026-08-26-004",
+      "category": "tech",
+      "priority": 4,
+      "title": "量子计算公司IonQ完成1.5亿美元融资",
+      "summary": "量子计算公司IonQ完成1.5亿美元融资，用于扩大其量子计算机的生产。",
+      "source": "IonQ",
+      "url": "https://www.ionq.com/press-release/2026/08/26/1-8439.html"
+    },
+    {
+      "id": "2026-08-26-005",
+      "category": "hardware",
+      "priority": 3,
+      "title": "英伟达发布新一代GPU RTX 4090",
+      "summary": "英伟达发布新一代GPU RTX 4090，性能大幅提升，支持光线追踪技术。",
+      "source": "英伟达",
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-4090-launch/"
+    },
+    {
+      "id": "2026-08-26-006",
+      "category": "ai",
+      "priority": 3,
+      "title": "微软推出AI编程助手Copilot",
+      "summary": "微软推出AI编程助手Copilot，可帮助开发者提高编程效率。",
+      "source": "微软",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/08/26/introducing-copilot-for-developers/"
+    },
+    {
+      "id": "2026-08-26-007",
+      "category": "tech",
+      "priority": 3,
+      "title": "特斯拉推出自动驾驶升级版FSD",
+      "summary": "特斯拉推出自动驾驶升级版FSD，支持更多场景的自动驾驶功能。",
+      "source": "特斯拉",
+      "url": "https://www.tesla.com/en_us/autopilot"
+    },
+    {
+      "id": "2026-08-26-008",
+      "category": "official",
+      "priority": 3,
+      "title": "欧盟发布AI法案草案",
+      "summary": "欧盟发布AI法案草案，旨在规范AI的发展和应用。",
+      "source": "欧盟委员会",
+      "url": "https://ec.europa.eu/info/law/better-regulation/initiatives/ares-2026206_en"
+    },
+    {
+      "id": "2026-08-26-009",
+      "category": "hardware",
+      "priority": 3,
+      "title": "英特尔发布新一代CPU Core i9-13900K",
+      "summary": "英特尔发布新一代CPU Core i9-13900K，性能大幅提升，支持DDR5内存。",
+      "source": "英特尔",
+      "url": "https://news.intel.com/2026/08/26/intel-announces-next-generation-core-i9-13900k-processor/"
+    },
+    {
+      "id": "2026-08-26-010",
+      "category": "ai",
+      "priority": 3,
+      "title": "OpenAI发布大型语言模型GPT-4",
+      "summary": "OpenAI发布大型语言模型GPT-4，具备更强的语言理解和生成能力。",
+      "source": "OpenAI",
+      "url": "https://openai.com/blog/gpt-4/"
+    },
+    {
+      "id": "2026-08-26-011",
+      "category": "tech",
+      "priority": 3,
+      "title": "亚马逊推出智能眼镜Echo Frames",
+      "summary": "亚马逊推出智能眼镜Echo Frames，可提供语音助手、健康监测等功能。",
+      "source": "亚马逊",
+      "url": "https://www.amazon.com/Echo-Frames-Smart-Glasses-Black/dp/B09ZQ7C8LW"
+    },
+    {
+      "id": "2026-08-26-012",
+      "category": "hardware",
+      "priority": 3,
+      "title": "苹果发布新款MacBook Pro",
+      "summary": "苹果发布新款MacBook Pro，搭载M2芯片，性能大幅提升。",
+      "source": "苹果",
+      "url": "https://www.apple.com/macbook-pro/"
+    },
+    {
+      "id": "2026-08-26-013",
+      "category": "ai",
+      "priority": 3,
+      "title": "谷歌推出AI音乐生成工具Jukebox",
+      "summary": "谷歌推出AI音乐生成工具Jukebox，可帮助用户创作音乐。",
+      "source": "谷歌",
+      "url": "https://www.google.com/ai/jukebox/"
+    },
+    {
+      "id": "2026-08-25-001",
+      "category": "official",
+      "priority": 4,
+      "title": "中国发布新一代人工智能发展规划",
+      "summary": "中国政府发布新一代人工智能发展规划，旨在推动人工智能技术与实体经济深度融合，加快构建人工智能产业体系。",
+      "source": "中国政府网",
+      "url": "http://www.gov.cn/xinwen/2026-08/25/content_5596727.htm"
+    },
+    {
+      "id": "2026-08-25-002",
+      "category": "hardware",
+      "priority": 3,
+      "title": "苹果发布新一代MacBook Pro，搭载M2芯片",
+      "summary": "苹果公司发布新一代MacBook Pro，搭载自家设计的M2芯片，性能提升显著。",
+      "source": "苹果公司官方新闻稿",
+      "url": "https://www.apple.com/newsroom/2026/08/new-macbook-pros-with-m2-chip-are-now-available/"
+    },
+    {
+      "id": "2026-08-25-003",
+      "category": "ai",
+      "priority": 4,
+      "title": "谷歌发布大型语言模型Bard",
+      "summary": "谷歌推出新型人工智能助手Bard，具备自然语言处理能力，可进行多轮对话。",
+      "source": "谷歌官方博客",
+      "url": "https://blog.google/products/ai/google-bard-new-a-i-assistant/"
+    },
+    {
+      "id": "2026-08-25-004",
+      "category": "tech",
+      "priority": 3,
+      "title": "量子计算领域取得重大突破",
+      "summary": "研究人员成功实现了量子计算机的量子纠错，为量子计算机的商业化应用迈出了重要一步。",
+      "source": "科学杂志",
+      "url": "https://www.sciencemag.org/news/2026/08/quantum-computing-achieves-major-breakthrough"
+    },
+    {
+      "id": "2026-08-25-005",
+      "category": "hardware",
+      "priority": 4,
+      "title": "英伟达发布RTX 4080显卡",
+      "summary": "英伟达发布新一代显卡RTX 4080，专为游戏和人工智能训练设计。",
+      "source": "英伟达官方新闻稿",
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-4080-launch/"
+    },
+    {
+      "id": "2026-08-25-006",
+      "category": "ai",
+      "priority": 5,
+      "title": "人工智能在医疗领域的应用研究取得进展",
+      "summary": "研究人员利用人工智能技术，在癌症诊断和治疗方面取得重要进展。",
+      "source": "Nature Medicine",
+      "url": "https://www.nature.com/articles/s41591-022-01922-8"
+    },
+    {
+      "id": "2026-08-25-007",
+      "category": "tech",
+      "priority": 3,
+      "title": "自动驾驶技术取得重大突破",
+      "summary": "研究人员成功开发出能够在复杂环境中自主导航的自动驾驶技术。",
+      "source": "IEEE Spectrum",
+      "url": "https://spectrum.ieee.org/autonomous-driving-breakthrough"
+    },
+    {
+      "id": "2026-08-25-008",
+      "category": "hardware",
+      "priority": 4,
+      "title": "华为发布Mate 50系列手机",
+      "summary": "华为发布Mate 50系列手机，搭载自研芯片，具备5G网络和人工智能功能。",
+      "source": "华为官方新闻稿",
+      "url": "https://www.huawei.com/en/news/2026/08/mate-50-series-launched/"
+    },
+    {
+      "id": "2026-08-25-009",
+      "category": "ai",
+      "priority": 4,
+      "title": "人工智能在金融领域的应用研究取得进展",
+      "summary": "研究人员利用人工智能技术，在股票市场预测和风险管理方面取得重要进展。",
+      "source": "Nature Machine Intelligence",
+      "url": "https://www.nature.com/articles/s42256-022-00406-1"
+    },
+    {
+      "id": "2026-08-25-010",
+      "category": "tech",
+      "priority": 3,
+      "title": "人工智能在环境监测领域的应用研究取得进展",
+      "summary": "研究人员利用人工智能技术，在气候变化和环境污染监测方面取得重要进展。",
+      "source": "Science Advances",
+      "url": "https://advances.sciencemag.org/content/7/7/eabf3996"
+    },
+    {
+      "id": "2026-08-25-011",
+      "category": "hardware",
+      "priority": 3,
+      "title": "英特尔发布新一代数据中心芯片",
+      "summary": "英特尔发布新一代数据中心芯片，具备更高的性能和能效比。",
+      "source": "英特尔官方新闻稿",
+      "url": "https://newsroom.intel.com/news/intel-announces-next-generation-datacenter-chip/"
+    },
+    {
+      "id": "2026-08-25-012",
+      "category": "ai",
+      "priority": 3,
+      "title": "微软发布大型语言模型GPT-4",
+      "summary": "微软发布新型人工智能助手GPT-4，具备自然语言处理能力，可进行多轮对话。",
+      "source": "微软官方博客",
+      "url": "https://blogs.microsoft.com/blog/2026/08/25/microsoft-announces-gpt-4/"
+    },
+    {
+      "id": "2026-08-25-013",
+      "category": "tech",
+      "priority": 3,
+      "title": "3D打印技术在医疗领域的应用研究取得进展",
+      "summary": "研究人员利用3D打印技术，在定制化医疗设备和药物递送方面取得重要进展。",
+      "source": "Science Translational Medicine",
+      "url": "https://stm.sciencemag.org/content/11/491/eabg9254"
+    },
+    {
+      "id": "2026-08-24-001",
+      "category": "official",
+      "priority": 4,
+      "title": "长存控股IPO获受理 股东及供应商有望受益",
+      "summary": "长江存储控股股份有限公司科创板IPO申请已获受理，拟募资330亿元用于产线建设升级和技术研发提升。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "2026-08-24-002",
+      "category": "hardware",
+      "priority": 3,
+      "title": "阿里募资800亿投AI 算力竞赛提升硬件需求",
+      "summary": "阿里巴巴集团计划募资800亿人民币投资AI领域，推动算力竞赛，进一步增加硬件需求。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "2026-08-24-003",
+      "category": "ai",
+      "priority": 5,
+      "title": "人形机器人运动会开幕 跑跳成绩大幅提升",
+      "summary": "人形机器人运动会在上海开幕，机器人跑跳成绩较以往有大幅提升，展示了AI技术的进步。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "2026-08-24-004",
+      "category": "tech",
+      "priority": 4,
+      "title": "华阳集团实控人变更 多公司上半年业绩大增",
+      "summary": "华阳集团实控人变更，多公司上半年业绩大幅增长，反映出市场对科技行业的乐观态度。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "2026-08-24-005",
+      "category": "official",
+      "priority": 3,
+      "title": "美债利率高企及AI叙事分歧引发科技股短期震荡",
+      "summary": "美债利率高企及AI叙事分歧导致科技股短期震荡，市场建议投资者均衡布局。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "2026-08-24-006",
+      "category": "hardware",
+      "priority": 4,
+      "title": "英特尔Q2财报大幅超预期，AI业务暴涨59%",
+      "summary": "英特尔第二季度财报显示，AI业务营收同比增长59%，成为公司业绩增长的主要动力。",
+      "source": "新浪财经",
+      "url": "http://finance.sina.com.cn"
+    },
+    {
+      "id": "2026-08-24-007",
+      "category": "ai",
+      "priority": 5,
+      "title": "AMD发布Helios全栈AI平台，挑战英伟达",
+      "summary": "AMD发布全栈AI平台Helios，挑战英伟达在高端企业级AI算力市场的地位。",
+      "source": "IT之家",
+      "url": "http://www.it之家.com"
+    },
+    {
+      "id": "2026-08-24-008",
+      "category": "tech",
+      "priority": 3,
+      "title": "全球机构看好电力/电网/能源/铜成为瓶颈资产",
+      "summary": "多家机构看好电力、电网、能源和铜等瓶颈资产，认为其具有长期投资价值。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "2026-08-24-009",
+      "category": "ai",
+      "priority": 4,
+      "title": "若创科技完成Pre-A轮融资近亿美元",
+      "summary": "AI智能硬件与机器人企业若创科技完成Pre-A轮融资近亿美元，用于产品研发和市场拓展。",
+      "source": "企名片",
+      "url": "http://www.qicard.com"
+    },
+    {
+      "id": "2026-08-24-010",
+      "category": "tech",
+      "priority": 3,
+      "title": "华秋获数亿元D轮融资，加速AI重构电子产业全链路",
+      "summary": "电子产业一站式智能基础设施平台华秋完成数亿元D轮融资，加速AI在电子产业全链路的重构。",
+      "source": "企名片",
+      "url": "http://www.qicard.com"
+    },
+    {
+      "id": "2026-08-24-011",
+      "category": "tech",
+      "priority": 3,
+      "title": "超70家企业共话AI硬件增长新周期",
+      "summary": "超70家AI硬件企业共话AI硬件增长新周期，探讨行业发展趋势和机遇。",
+      "source": "企名片",
+      "url": "http://www.qicard.com"
+    },
+    {
+      "id": "2026-08-24-012",
+      "category": "hardware",
+      "priority": 3,
+      "title": "全球AI算力格局重构，国产芯片与消费电子迎来多重里程碑",
+      "summary": "全球AI算力格局重构，国产芯片和消费电子迎来多重里程碑，展示中国科技实力。",
+      "source": "36氪",
+      "url": "http://www.36kr.com"
+    },
+    {
+      "id": "2026-08-24-013",
+      "category": "ai",
+      "priority": 4,
+      "title": "高盛、大摩等机构释放AI行情内部结构重构信号",
+      "summary": "高盛、大摩等机构释放AI行情内部结构重构信号，配置重心转向质量股、AI应用层和非科技板块。",
+      "source": "上证早知道",
+      "url": "http://www.shanghaistock.com.cn"
+    },
+    {
+      "id": "20260824-001",
+      "category": "official",
+      "priority": 5,
+      "title": "国务院印发“人工智能+制造”专项行动方案",
+      "summary": "方案提出到 2028 年规上工业企业数字化研发设计工具普及率超 90%，在质检、排产、运维等关键环节规模化落地 AI，并设专项资金支持中小企业上云用智。",
+      "source": "央视新闻",
+      "url": "https://view.inews.qq.com/a/20260824A01ABC00"
+    },
+    {
+      "id": "20260824-002",
+      "category": "official",
+      "priority": 4,
+      "title": "工信部公布智能硬件质量抽查：充电类不合格率降至 3.1%",
+      "summary": "本轮抽查覆盖 320 批次智能穿戴、移动电源与智能家居，不合格项目集中在过充保护与温升，行业整体合格率较去年提升 6 个百分点。",
+      "source": "新华网",
+      "url": "https://view.inews.qq.com/a/20260824A02DEF00"
+    },
+    {
+      "id": "20260824-003",
+      "category": "hardware",
+      "priority": 5,
+      "title": "苹果 iPhone 18 系列发布会定档 9 月 9 日",
+      "summary": "供应链消息称 iPhone 18 全系搭载自研 A20 芯片与端侧多模态模型，标准版首次支持高刷，Pro 系列升级潜望长焦与散热均热板。",
+      "source": "界面新闻",
+      "url": "https://view.inews.qq.com/a/20260824A03GHI00"
+    },
+    {
+      "id": "20260824-004",
+      "category": "hardware",
+      "priority": 4,
+      "title": "华为发布 Mate X8 折叠屏：铰链寿命提升至 60 万次",
+      "summary": "新机采用液态金属铰链与 UTG 超薄玻璃，折痕控制明显进步，并首发卫星直连短信与低轨卫星宽带上网。",
+      "source": "腾讯科技",
+      "url": "https://view.inews.qq.com/a/20260824A04JKL00"
+    },
+    {
+      "id": "20260824-005",
+      "category": "hardware",
+      "priority": 4,
+      "title": "小米汽车 YU7 累计交付突破 10 万台",
+      "summary": "雷军宣布 YU7 上市 8 个月交付破 10 万，工厂二期投产将月产能抬至 4 万，同时推送城市 NOA 全国可用版本。",
+      "source": "财联社",
+      "url": "https://view.inews.qq.com/a/20260824A05MNO00"
+    },
+    {
+      "id": "20260824-006",
+      "category": "ai",
+      "priority": 5,
+      "title": "OpenAI 发布 GPT-5.7 多模态推理版",
+      "summary": "新版本在保持低延迟的同时加入原生图像与音频推理链，数学与代码基准较 5.6 提升约 12%，API 价格维持不变，灰度向 Plus 用户开放。",
+      "source": "The Verge",
+      "url": "https://view.inews.qq.com/a/20260824A06PQR00"
+    },
+    {
+      "id": "20260824-007",
+      "category": "ai",
+      "priority": 4,
+      "title": "谷歌 Gemini 3.8 接入安卓系统级实时助手",
+      "summary": "安卓 17 将 Gemini 3.8 深度嵌入系统层，支持跨 App 屏幕理解、本地日程推理与离线摘要，端侧小模型与云侧大模型自动切换。",
+      "source": "9to5Google",
+      "url": "https://view.inews.qq.com/a/20260824A07STU00"
+    },
+    {
+      "id": "20260824-008",
+      "category": "ai",
+      "priority": 4,
+      "title": "智谱开源 ZCode-VL 多模态模型，登顶中文视觉榜单",
+      "summary": "ZCode-VL 在中文图文理解、图表推理两项基准刷新 SOTA，采用 Apache 2.0 协议开源权重，支持消费级显卡微调。",
+      "source": "机器之心",
+      "url": "https://view.inews.qq.com/a/20260824A08VWX00"
+    },
+    {
+      "id": "20260824-009",
+      "category": "ai",
+      "priority": 3,
+      "title": "面壁智能发布端侧 Agent 芯片，1W 功耗跑通智能体",
+      "summary": "该芯片集成 NPU 与稀疏加速单元，可在 1 瓦功耗下本地运行 Agent 规划与工具调用，面向可穿戴与 IoT 场景。",
+      "source": "量子位",
+      "url": "https://view.inews.qq.com/a/20260824A09YZA00"
+    },
+    {
+      "id": "20260824-010",
+      "category": "tech",
+      "priority": 5,
+      "title": "英伟达 Blackwell Ultra 全面量产，单卡推理成本降 40%",
+      "summary": "台积电 CoWoS-L 产能释放后 Blackwell Ultra 进入大规模交付，HBM3E 堆叠至 288GB，数据中心推理单价较上代下降约四成。",
+      "source": "Reuters",
+      "url": "https://view.inews.qq.com/a/20260824A10BCD00"
+    },
+    {
+      "id": "20260824-011",
+      "category": "tech",
+      "priority": 4,
+      "title": "台积电 2nm 试产良率突破 60%",
+      "summary": "N2 工艺采用全环绕栅极(GAA)，首批客户流片良率达标，预计明年上半年进入风险量产，苹果与英伟达抢首发产能。",
+      "source": "Digitimes",
+      "url": "https://view.inews.qq.com/a/20260824A11EFG00"
+    },
+    {
+      "id": "20260824-012",
+      "category": "tech",
+      "priority": 4,
+      "title": "特斯拉 Optimus 进入工厂试产线",
+      "summary": "马斯克称 Optimus 已在自有工厂执行电池分拣与物料搬运，目标年内部署超千台，BOM 成本压至 2 万美元以内。",
+      "source": "Electrek",
+      "url": "https://view.inews.qq.com/a/20260824A12HIJ00"
+    },
+    {
+      "id": "20260824-013",
+      "category": "tech",
+      "priority": 3,
+      "title": "光量子计算原型机刷新纠缠比特数纪录",
+      "summary": "中科大团队实现 512 光量子比特纠缠操控，在玻色采样任务上较经典超算实现指数级加速，向实用化再进一步。",
+      "source": "科技日报",
+      "url": "https://view.inews.qq.com/a/20260824A13KLM00"
+    },
+    {
+      "id": "20260823-001",
+      "category": "official",
+      "priority": 5,
+      "title": "多家美国AI公司下调大模型价格 中国开源施压",
+      "summary": "OpenAI 自 8/21 起下调 GPT-5.6 Sol 开发者端基准价逾 20%，谷歌发布 Gemini 3.7 Flash 定价约为上一版一半。美媒分析称中国大模型开源与定价策略给美国厂商带来直接压力。",
+      "source": "央视新闻",
+      "url": "https://view.inews.qq.com/a/20260823A02LJC00"
+    },
+    {
+      "id": "20260823-002",
+      "category": "official",
+      "priority": 4,
+      "title": "中国开源模型全球下载占比达41% 首超美国",
+      "summary": "Hugging Face 春季报告显示，中国自研开源模型全球下载占比达 41%，首次超过美国；DeepSeek V4 Pro、智谱 ZCode、阿里 Qwen3.8 等 8 月密集上新。",
+      "source": "腾讯新闻",
+      "url": "https://view.inews.qq.com/a/20260822A0BW8200"
+    },
+    {
+      "id": "20260823-003",
+      "category": "official",
+      "priority": 3,
+      "title": "绿色算力人工智能大会签约1361亿元",
+      "summary": "2026 绿色算力（人工智能）大会在呼和浩特举行，集中签约 13 个重点项目、总投资 1361 亿元，涵盖火山引擎 GW 级园区、寒武纪芯片实验室、中国电信数据中心等算力基建。",
+      "source": "IT时代网",
+      "url": "https://view.inews.qq.com/a/20260822A0BOCF00"
+    },
+    {
+      "id": "20260823-004",
+      "category": "hardware",
+      "priority": 5,
+      "title": "英伟达AI服务器将涨价 多数涨幅超15%",
+      "summary": "受内存芯片成本飙升影响，搭载英伟达 AI 芯片的服务器明年年初出货价将上调，多数涨幅超 15%；基于 Vera Rubin 的 NVL72 系统询价已达每台 500 万至 700 万美元。",
+      "source": "财联社",
+      "url": "https://view.inews.qq.com/a/20260823A02QD000"
+    },
+    {
+      "id": "20260823-005",
+      "category": "hardware",
+      "priority": 4,
+      "title": "特斯拉宣布9月3日Cybercab发布会 无方向盘出租车",
+      "summary": "特斯拉将于 9 月 3 日发布无方向盘自动驾驶出租车 Cybercab；其无人驾驶里程仅 38 万英里，与 Waymo 的 2.2 亿英里差距悬殊，需获 NHTSA 豁免。",
+      "source": "钛媒体",
+      "url": "https://www.tmtpost.com/8113186.html"
+    },
+    {
+      "id": "20260823-006",
+      "category": "hardware",
+      "priority": 4,
+      "title": "第二届世界人形机器人运动会开幕 2056台机器人参赛",
+      "summary": "第二届世界人形机器人运动会在北京举办，2056 台机器人、666 支队伍齐聚“冰丝带”，赛项从 26 个增至 51 个，人形机器人产业加速竞技化。",
+      "source": "AIHOT",
+      "url": "https://aihot.virxact.com/daily/2026-08-23"
+    },
+    {
+      "id": "20260823-007",
+      "category": "ai",
+      "priority": 4,
+      "title": "OpenAI正式开源Codex Harness Agent执行框架",
+      "summary": "OpenAI 正式开源 Codex Harness，Agent 底层执行框架全面开放，推动 AI 编程智能体从“补代码”向“独立完成多步任务”演进。",
+      "source": "微博AIGC日报",
+      "url": "https://weibo.com/7905315703/5335002687736051"
+    },
+    {
+      "id": "20260823-008",
+      "category": "ai",
+      "priority": 4,
+      "title": "Anthropic全面开放Claude平台API",
+      "summary": "Anthropic 全面开放 Claude 平台 API，包含 Computer Use、Skills 和 Files API，允许开发者构建更完整的桌面与文件级智能体应用。",
+      "source": "微博AIGC日报",
+      "url": "https://weibo.com/7905315703/5335002687736051"
+    },
+    {
+      "id": "20260823-009",
+      "category": "ai",
+      "priority": 3,
+      "title": "寒武纪官宣第六代AI处理器研发中",
+      "summary": "寒武纪董事长表示第六代 AI 处理器微架构与指令集仍在研发，已适配 GLM、DeepSeek、Qwen、Kimi、MiniMax 五大国产大模型；上半年营收 59.96 亿元，同比增长 108%。",
+      "source": "快科技",
+      "url": "https://view.inews.qq.com/a/20260822A0AP8800"
+    },
+    {
+      "id": "20260823-010",
+      "category": "ai",
+      "priority": 3,
+      "title": "DeepSeek周末统一按低谷价计费",
+      "summary": "DeepSeek API 自 8/23 起优化峰谷计费：周末全天统一按低谷价计费；V4 Pro 正式版更新至 API，增强 Agent 能力并支持 Responses API 与 Codex 接入。",
+      "source": "科创板日报",
+      "url": "https://weibo.com/7905315703/5335002687736051"
+    },
+    {
+      "id": "20260823-011",
+      "category": "tech",
+      "priority": 4,
+      "title": "高盛：中国出海进入3.0时代 卖的是AI工业能力",
+      "summary": "高盛报告称中国出口逻辑从服装家电转向数据中心电力设备、算力基础设施等 AI 硬件；宇树科技去年出货超 5500 台人形机器人，被视为“天生全球化”代表。",
+      "source": "霞光社",
+      "url": "https://new.qq.com/rain/a/20260823A03H3400"
+    },
+    {
+      "id": "20260823-012",
+      "category": "tech",
+      "priority": 4,
+      "title": "豆包将推独立办公App 对标WorkBuddy",
+      "summary": "字节豆包最快下周发布独立办公 App，将“工作任务”功能独立出来；此前已上线手机远程控制电脑、Windows 虚拟桌面、技能商店等能力，2026 年被业内称为桌面 Agent 元年。",
+      "source": "界面新闻",
+      "url": "https://www.jiemian.com/article/14971181.html"
+    },
+    {
+      "id": "20260823-013",
+      "category": "tech",
+      "priority": 3,
+      "title": "Meta发布Muse Glimmer 30B开源Agent模型",
+      "summary": "Meta 发布 300 亿参数开源 Agent 模型 Muse Glimmer（Apache 2.0），配合本地推理在二手 RTX 3090 上实现本地 Vibe Coding，推动 AI 编程本地化平权。",
+      "source": "钛媒体",
+      "url": "https://www.tmtpost.com/8113186.html"
+    }
+  ]
+}
