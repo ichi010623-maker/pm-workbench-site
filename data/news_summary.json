@@ -329,7 +329,121 @@
           ]
         }
       ]
+    },
+    "2026-08-28": {
+      "date": "2026-08-28",
+      "mode": "rss",
+      "sources": {
+        "BBC": 0,
+        "BBC商业": 0,
+        "BBC科技": 0,
+        "Al Jazeera": 0,
+        "NPR": 10,
+        "Guardian世界": 0,
+        "Guardian科技": 0,
+        "Guardian商业": 0
+      },
+      "rssCount": 10,
+      "brief": [
+        "前波黑塞族战犯Mladic去世",
+        "Meta达成170亿美元和解",
+        "尼泊尔-西藏洪水造成至少1500人失踪",
+        "学校面临柴油价格上涨难题",
+        "Andrew Tate寻求保释"
+      ],
+      "groups": [
+        {
+          "cat": "国际",
+          "icon": "🌍",
+          "items": [
+            {
+              "title": "Mladic去世",
+              "summary": "前波黑塞族战犯Ratko Mladic去世，享年84岁。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5946375/ratko-mladic-dead"
+            },
+            {
+              "title": "尼泊尔-西藏洪水",
+              "summary": "尼泊尔-西藏边境洪水造成至少1500人失踪。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5946309/nepal-tibet-deadly-floods"
+            },
+            {
+              "title": "学校柴油价格上涨",
+              "summary": "伊朗战争导致柴油价格上涨，影响学校开学。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5944429/school-buses-fuel-diesel-prices"
+            }
+          ]
+        },
+        {
+          "cat": "商业财经",
+          "icon": "💼",
+          "items": [
+            {
+              "title": "Meta和解",
+              "summary": "Meta与起诉其的各州达成170亿美元和解。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/g-s1-140414/up-first-newsletter-meta-settlement-mail-in-voting-nrc-regulations-nepal-tibet-flooding"
+            },
+            {
+              "title": "核监管机构放弃规则",
+              "summary": "核监管机构准备放弃一项数十年的辐射安全规则。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/g-s1-140414/up-first-newsletter-meta-settlement-mail-in-voting-nrc-regulations-nepal-tibet-flooding"
+            },
+            {
+              "title": "Andrew Tate保释",
+              "summary": "Andrew Tate在引渡斗争中寻求保释，可能性不大。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5918058/andrew-tate-extradition"
+            }
+          ]
+        },
+        {
+          "cat": "科技",
+          "icon": "💻",
+          "items": [
+            {
+              "title": "数据中心保密协议",
+              "summary": "保密协议掩盖了数据中心交易，引起当地居民和立法者的不满。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5879528/data-center-nda-disclosure-louisiana"
+            },
+            {
+              "title": "核辐射安全规则",
+              "summary": "总统特朗普的推动可能导致一项旨在将辐射暴露保持在最低限度的安全标准的取消。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5920368/nrc-nuclear-radiation-safety-rules-alara-update"
+            },
+            {
+              "title": "Jon Ossoff受欢迎",
+              "summary": "乔治亚州的民主党参议员Jon Ossoff在民调中领先，被视为2028年的潜在候选人。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5935282/jon-ossoff-georgia-senate-race"
+            }
+          ]
+        },
+        {
+          "cat": "其他",
+          "icon": "🌏",
+          "items": [
+            {
+              "title": "Rwandan牛奶吧",
+              "summary": "在卢旺达，每天喝几杯牛奶是常见的。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/g-s1-139914/milk-rwanda-milk-bar"
+            },
+            {
+              "title": "肯尼迪中心威胁拆除",
+              "summary": "一场诉讼试图阻止特朗普的名字重新出现在肯尼迪中心。如果翻新计划不进行，董事会警告说可能会拆除。",
+              "source": "NPR",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5945238/emergency-hearing-kennedy-center-demolish-threat"
+            }
+          ]
+        }
+      ]
     }
   },
-  "updatedAt": "2026-08-27T00:01:00+08:00"
+  "updatedAt": "2026-08-28T00:01:00+08:00"
 }
