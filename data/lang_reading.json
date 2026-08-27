@@ -247,7 +247,63 @@
         "content": "Looking closely at paintings can reveal hidden meanings.",
         "translation": "仔细观察画作可以揭示隐藏的含义。"
       }
+    ],
+    "2026-08-28": [
+      {
+        "level": "入门",
+        "title": "Smart Cities",
+        "content": "Smart cities use technology to improve life. Sensors and apps help manage traffic and waste. This makes cities more efficient and sustainable.",
+        "translation": "智慧城市利用技术改善生活。传感器和应用程序帮助管理交通和废物。这使得城市更加高效和可持续。"
+      },
+      {
+        "level": "进阶",
+        "title": "Eco-Friendly Shopping",
+        "content": "Eco-friendly shopping involves choosing products with minimal environmental impact. Look for sustainable materials and fair trade labels.",
+        "translation": "环保购物涉及选择对环境影响最小的产品。寻找可持续材料和公平贸易标签。"
+      },
+      {
+        "level": "挑战",
+        "title": "Mental Health Apps",
+        "content": "Mental health apps offer support and resources for managing stress and anxiety. They provide guided meditations and mood tracking tools.",
+        "translation": "心理健康应用程序提供支持和资源来管理压力和焦虑。它们提供引导冥想和情绪跟踪工具。"
+      },
+      {
+        "level": "入门",
+        "title": "Healthy Habits",
+        "content": "Establishing healthy habits, like regular exercise and balanced meals, can lead to a better quality of life.",
+        "translation": "建立健康习惯，如定期锻炼和均衡饮食，可以带来更好的生活质量。"
+      },
+      {
+        "level": "进阶",
+        "title": "Cooking with Herbs",
+        "content": "Herbs add flavor to dishes without extra calories. They are rich in nutrients and can be grown easily at home.",
+        "translation": "香草可以为菜肴增添风味而不增加额外热量。它们富含营养，可以在家中轻松种植。"
+      },
+      {
+        "level": "挑战",
+        "title": "Global Cuisine",
+        "content": "Global cuisine celebrates the diversity of food cultures around the world. It encourages us to explore and appreciate different flavors.",
+        "translation": "全球美食庆祝世界各地食物文化的多样性。它鼓励我们探索和欣赏不同的风味。"
+      },
+      {
+        "level": "入门",
+        "title": "Travel Planning",
+        "content": "Effective travel planning includes researching destinations, booking accommodations, and packing essential items.",
+        "translation": "有效的旅行规划包括研究目的地、预订住宿和打包必需品。"
+      },
+      {
+        "level": "进阶",
+        "title": "Work-Life Balance",
+        "content": "Maintaining a work-life balance is crucial for mental and physical health. Set boundaries and prioritize personal time.",
+        "translation": "保持工作与生活的平衡对于精神和身体健康至关重要。设定界限并优先考虑个人时间。"
+      },
+      {
+        "level": "挑战",
+        "title": "Sports Psychology",
+        "content": "Sports psychology helps athletes improve performance by managing stress and developing mental toughness.",
+        "translation": "运动心理学通过管理压力和发展心理韧性来帮助运动员提高表现。"
+      }
     ]
   },
-  "updatedAt": "2026-08-27T00:05:00+08:00"
+  "updatedAt": "2026-08-28T00:05:00+08:00"
 }
