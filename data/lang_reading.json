@@ -252,58 +252,64 @@
       {
         "level": "入门",
         "title": "Smart Cities",
-        "content": "Smart cities use technology to improve life. Sensors and apps help manage traffic and waste. This makes cities more efficient and sustainable.",
-        "translation": "智慧城市利用技术改善生活。传感器和应用程序帮助管理交通和废物。这使得城市更加高效和可持续。"
+        "content": "Smart cities use technology to improve living standards. Sensors monitor traffic and energy use. Citizens enjoy better services and a cleaner environment.",
+        "translation": "智慧城市利用科技来改善生活标准。传感器监控交通和能源使用。市民享受更好的服务和更清洁的环境。"
       },
       {
         "level": "进阶",
-        "title": "Eco-Friendly Shopping",
-        "content": "Eco-friendly shopping involves choosing products with minimal environmental impact. Look for sustainable materials and fair trade labels.",
-        "translation": "环保购物涉及选择对环境影响最小的产品。寻找可持续材料和公平贸易标签。"
+        "title": "Cooking with Spices",
+        "content": "Spices add flavor to food and have health benefits. Cinnamon can lower blood sugar, and turmeric may reduce inflammation.",
+        "translation": "香料可以为食物增添风味，并且具有健康益处。肉桂可以降低血糖，姜黄可能减少炎症。"
       },
       {
         "level": "挑战",
-        "title": "Mental Health Apps",
-        "content": "Mental health apps offer support and resources for managing stress and anxiety. They provide guided meditations and mood tracking tools.",
-        "translation": "心理健康应用程序提供支持和资源来管理压力和焦虑。它们提供引导冥想和情绪跟踪工具。"
+        "title": "Ocean Conservation",
+        "content": "Ocean conservation is crucial. Plastic pollution affects marine life. Recycling and reducing plastic use can help protect our oceans.",
+        "translation": "海洋保护至关重要。塑料污染影响海洋生物。回收和减少塑料使用可以帮助保护我们的海洋。"
       },
       {
         "level": "入门",
-        "title": "Healthy Habits",
-        "content": "Establishing healthy habits, like regular exercise and balanced meals, can lead to a better quality of life.",
-        "translation": "建立健康习惯，如定期锻炼和均衡饮食，可以带来更好的生活质量。"
+        "title": "Daily Routines",
+        "content": "Having a daily routine helps manage time. It can include exercise, meals, and relaxation. Consistency is key to a balanced life.",
+        "translation": "拥有日常例行程序有助于管理时间。它可以包括锻炼、饮食和放松。一致性是实现平衡生活的关键。"
       },
       {
         "level": "进阶",
-        "title": "Cooking with Herbs",
-        "content": "Herbs add flavor to dishes without extra calories. They are rich in nutrients and can be grown easily at home.",
-        "translation": "香草可以为菜肴增添风味而不增加额外热量。它们富含营养，可以在家中轻松种植。"
+        "title": "The Science of Sleep",
+        "content": "Sleep is essential for health. It helps the brain process information and strengthens the immune system. Lack of sleep can lead to health problems.",
+        "translation": "睡眠对健康至关重要。它有助于大脑处理信息并增强免疫系统。缺乏睡眠可能导致健康问题。"
       },
       {
         "level": "挑战",
-        "title": "Global Cuisine",
-        "content": "Global cuisine celebrates the diversity of food cultures around the world. It encourages us to explore and appreciate different flavors.",
-        "translation": "全球美食庆祝世界各地食物文化的多样性。它鼓励我们探索和欣赏不同的风味。"
+        "title": "Art Appreciation",
+        "content": "Art appreciation involves understanding and enjoying art. It can be found in paintings, sculptures, and music. It reflects human creativity and emotions.",
+        "translation": "艺术欣赏涉及理解和欣赏艺术。它可以在绘画、雕塑和音乐中找到。它反映了人类的创造力和情感。"
       },
       {
         "level": "入门",
-        "title": "Travel Planning",
-        "content": "Effective travel planning includes researching destinations, booking accommodations, and packing essential items.",
-        "translation": "有效的旅行规划包括研究目的地、预订住宿和打包必需品。"
+        "title": "Travel Apps",
+        "content": "Travel apps make planning easier. They offer information on flights, accommodations, and attractions. They can also provide language translations.",
+        "translation": "旅行应用使规划变得更简单。它们提供有关航班、住宿和景点的信息。它们还可以提供语言翻译。"
       },
       {
         "level": "进阶",
-        "title": "Work-Life Balance",
-        "content": "Maintaining a work-life balance is crucial for mental and physical health. Set boundaries and prioritize personal time.",
-        "translation": "保持工作与生活的平衡对于精神和身体健康至关重要。设定界限并优先考虑个人时间。"
+        "title": "Smartphone Habits",
+        "content": "Smartphone habits affect our lives. Too much screen time can lead to eye strain and sleep issues. Balancing smartphone use is important.",
+        "translation": "智能手机习惯影响我们的生活。过多的屏幕时间可能导致眼睛疲劳和睡眠问题。平衡智能手机使用很重要。"
       },
       {
         "level": "挑战",
-        "title": "Sports Psychology",
-        "content": "Sports psychology helps athletes improve performance by managing stress and developing mental toughness.",
-        "translation": "运动心理学通过管理压力和发展心理韧性来帮助运动员提高表现。"
+        "title": "Cultural Exchange",
+        "content": "Cultural exchange broadens perspectives. It involves learning about different cultures and sharing experiences. It fosters understanding and respect.",
+        "translation": "文化交流拓宽了视野。它涉及了解不同的文化和分享经验。它促进了理解和尊重。"
+      },
+      {
+        "level": "入门",
+        "title": "Healthy Snacks",
+        "content": "Healthy snacks provide energy without unhealthy fats. Options include nuts, fruits, and yogurt. They are great for on-the-go snacking.",
+        "translation": "健康零食提供能量而不含不健康的脂肪。选择包括坚果、水果和酸奶。它们是即食零食的绝佳选择。"
       }
     ]
   },
-  "updatedAt": "2026-08-28T00:05:00+08:00"
+  "updatedAt": "2026-08-28T07:10:00+08:00"
 }
