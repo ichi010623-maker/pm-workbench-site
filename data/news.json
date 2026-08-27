@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26 18:01+08:00",
+  "generatedAt": "2026-08-27 12:01+08:00",
   "categories": [
     {
       "key": "official",
@@ -23,6 +23,123 @@
     }
   ],
   "items": [
+    {
+      "id": "2026-08-27-001",
+      "category": "official",
+      "priority": 5,
+      "title": "中国发布《新一代人工智能发展规划2.0》",
+      "summary": "中国政府发布《新一代人工智能发展规划2.0》，旨在推动人工智能技术创新和产业发展。",
+      "source": "中国政府网",
+      "url": "http://www.gov.cn/xinwen/2026-08/27/content_5637450.htm"
+    },
+    {
+      "id": "2026-08-27-002",
+      "category": "hardware",
+      "priority": 4,
+      "title": "英伟达发布新一代GPU产品RTX 4090",
+      "summary": "英伟达发布新一代GPU产品RTX 4090，提供更强大的图形和计算能力。",
+      "source": "英伟达官网",
+      "url": "https://www.nvidia.com/en-us/geforce/news/rtx-4090/"
+    },
+    {
+      "id": "2026-08-27-003",
+      "category": "ai",
+      "priority": 4,
+      "title": "谷歌发布大型语言模型LaMDA",
+      "summary": "谷歌发布大型语言模型LaMDA，旨在提高机器翻译和自然语言处理能力。",
+      "source": "谷歌AI博客",
+      "url": "https://ai.googleblog.com/2026/08/lamda.html"
+    },
+    {
+      "id": "2026-08-27-004",
+      "category": "tech",
+      "priority": 3,
+      "title": "量子计算公司IBM宣布量子计算机突破50量子比特",
+      "summary": "IBM宣布其量子计算机突破50量子比特，标志着量子计算领域的重要进展。",
+      "source": "IBM官网",
+      "url": "https://www.ibm.com/blogs/research/2026/08/quantum-computer-reaches-50-qubits/"
+    },
+    {
+      "id": "2026-08-27-005",
+      "category": "hardware",
+      "priority": 3,
+      "title": "苹果发布新款MacBook Pro",
+      "summary": "苹果发布新款MacBook Pro，搭载M2芯片，提供更快的性能和更长的电池寿命。",
+      "source": "苹果官网",
+      "url": "https://www.apple.com/macbook-pro/"
+    },
+    {
+      "id": "2026-08-27-006",
+      "category": "ai",
+      "priority": 3,
+      "title": "微软推出大型语言模型GPT-4",
+      "summary": "微软推出大型语言模型GPT-4，具有更强大的语言理解和生成能力。",
+      "source": "微软研究博客",
+      "url": "https://research.microsoft.com/en-us/publications/gpt-4/"
+    },
+    {
+      "id": "2026-08-27-007",
+      "category": "tech",
+      "priority": 3,
+      "title": "特斯拉推出自动驾驶软件升级",
+      "summary": "特斯拉推出自动驾驶软件升级，提供更高级的自动驾驶功能。",
+      "source": "特斯拉官网",
+      "url": "https://www.tesla.com/updates/autopilot-software-update"
+    },
+    {
+      "id": "2026-08-27-008",
+      "category": "hardware",
+      "priority": 3,
+      "title": "华为发布新款智能手机Mate 50",
+      "summary": "华为发布新款智能手机Mate 50，搭载麒麟9000E芯片，提供强大的性能。",
+      "source": "华为官网",
+      "url": "https://www.huawei.com/cn/phones/mate50-series/"
+    },
+    {
+      "id": "2026-08-27-009",
+      "category": "ai",
+      "priority": 3,
+      "title": "OpenAI发布大型语言模型GPT-3.5",
+      "summary": "OpenAI发布大型语言模型GPT-3.5，具有更高级的自然语言处理能力。",
+      "source": "OpenAI官网",
+      "url": "https://openai.com/blog/gpt-3-5/"
+    },
+    {
+      "id": "2026-08-27-010",
+      "category": "tech",
+      "priority": 3,
+      "title": "亚马逊推出云计算服务AWS Outposts",
+      "summary": "亚马逊推出云计算服务AWS Outposts，允许用户在本地部署AWS服务。",
+      "source": "亚马逊官网",
+      "url": "https://aws.amazon.com/outposts/"
+    },
+    {
+      "id": "2026-08-27-011",
+      "category": "hardware",
+      "priority": 3,
+      "title": "英特尔发布新一代处理器Arc A380",
+      "summary": "英特尔发布新一代处理器Arc A380，提供更强大的图形和计算能力。",
+      "source": "英特尔官网",
+      "url": "https://newsroom.intel.com/news/intel-launches-next-generation-arc-graphics-processor/"
+    },
+    {
+      "id": "2026-08-27-012",
+      "category": "ai",
+      "priority": 3,
+      "title": "谷歌发布AI艺术创作工具DeepArt",
+      "summary": "谷歌发布AI艺术创作工具DeepArt，允许用户将照片转换为艺术作品。",
+      "source": "谷歌AI博客",
+      "url": "https://ai.googleblog.com/2026/08/deepart.html"
+    },
+    {
+      "id": "2026-08-27-013",
+      "category": "tech",
+      "priority": 3,
+      "title": "IBM推出量子计算云服务Qiskit",
+      "summary": "IBM推出量子计算云服务Qiskit，允许研究人员和企业使用量子计算机。",
+      "source": "IBM官网",
+      "url": "https://www.ibm.com/quantum/qiskit/"
+    },
     {
       "id": "2026-08-26-001",
       "category": "official",
