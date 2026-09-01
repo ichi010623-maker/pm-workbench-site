@@ -309,7 +309,69 @@
         "content": "Healthy snacks provide energy without unhealthy fats. Options include nuts, fruits, and yogurt. They are great for on-the-go snacking.",
         "translation": "健康零食提供能量而不含不健康的脂肪。选择包括坚果、水果和酸奶。它们是即食零食的绝佳选择。"
       }
+    ],
+    "2026-09-01": [
+      {
+        "level": "入门",
+        "title": "Robotics Basics",
+        "content": "Robots are machines that can perform tasks automatically. They are used in factories, homes, and even in space. Today, we explore the basics of robotics.",
+        "translation": "机器人是能够自动执行任务的机器。它们被用于工厂、家庭，甚至太空中。今天，我们来探索机器人的基础知识。"
+      },
+      {
+        "level": "进阶",
+        "title": "Sustainable Cities",
+        "content": "Sustainable cities focus on reducing waste and pollution. They use renewable energy and green spaces. Learn how cities are becoming more eco-friendly.",
+        "translation": "可持续城市专注于减少废料和污染。它们使用可再生能源和绿色空间。了解城市如何变得更加环保。"
+      },
+      {
+        "level": "挑战",
+        "title": "Artistic Expression",
+        "content": "Artistic expression is a way to communicate emotions and ideas. It can be through painting, music, or dance. Discover the power of art.",
+        "translation": "艺术表达是一种传达情感和思想的方式。它可以通过绘画、音乐或舞蹈来实现。发现艺术的力量。"
+      },
+      {
+        "level": "入门",
+        "title": "Healthy Habits",
+        "content": "Healthy habits include regular exercise, a balanced diet, and enough sleep. These habits can improve your health and well-being.",
+        "translation": "健康习惯包括定期锻炼、均衡饮食和充足的睡眠。这些习惯可以提高你的健康和福祉。"
+      },
+      {
+        "level": "进阶",
+        "title": "Global Communication",
+        "content": "Global communication is essential in today's interconnected world. It involves language skills and cultural understanding. Learn how to communicate effectively across cultures.",
+        "translation": "在全球互联的世界中，全球沟通至关重要。它涉及语言技能和文化理解。了解如何跨文化有效沟通。"
+      },
+      {
+        "level": "挑战",
+        "title": "Innovative Design",
+        "content": "Innovative design is about creating something new and useful. It requires creativity and problem-solving skills. Explore the world of innovative design.",
+        "translation": "创新设计是创造新颖且有用的东西。它需要创造力和解决问题的技能。探索创新设计的世界。"
+      },
+      {
+        "level": "入门",
+        "title": "Cultural Customs",
+        "content": "Cultural customs vary from one place to another. Understanding these customs can help avoid misunderstandings. Learn about different cultural customs.",
+        "translation": "文化习俗因地区而异。了解这些习俗可以帮助避免误解。了解不同的文化习俗。"
+      },
+      {
+        "level": "进阶",
+        "title": "Healthy Snacks",
+        "content": "Healthy snacks are a great way to fuel your body. They provide energy and nutrients without adding too many calories. Discover the best healthy snacks.",
+        "translation": "健康零食是给身体补充能量的好方法。它们提供能量和营养，而不增加过多的卡路里。发现最好的健康零食。"
+      },
+      {
+        "level": "挑战",
+        "title": "The Mind-Body Connection",
+        "content": "The mind-body connection is the relationship between physical health and mental well-being. Understanding this connection can improve your life. Learn more about the mind-body connection.",
+        "translation": "身心联系是身体健康和精神福祉之间的关系。了解这种联系可以改善你的生活。了解更多关于身心联系的知识。"
+      },
+      {
+        "level": "入门",
+        "title": "Travel Spots",
+        "content": "Traveling to new places can be exciting. It allows you to learn about different cultures and experiences. Discover the best travel spots around the world.",
+        "translation": "去新的地方旅行可以很兴奋。它让你了解不同的文化和经历。发现世界上最好的旅游地点。"
+      }
     ]
   },
-  "updatedAt": "2026-08-28T07:10:00+08:00"
+  "updatedAt": "2026-09-01T14:16:00+08:00"
 }
