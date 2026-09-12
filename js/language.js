@@ -1811,8 +1811,9 @@ function lgPhonPracPlay(modeId) {
   var body = "";
   if (modeId === "ipa2word") {
     // 音标 + 朗读按钮；不显示中文释义（会剧透答案）
+    var spk = lgPhonIpaSpeak(q.ipa);
     body = '<div class="lg-card phon-prac-probe"><div class="phon-prac-q">这个音标读什么？</div>' +
-      '<div class="phon-prac-ipa">' + q.ipa + ' <button class="phon-speak-btn" onclick="lgPhonSpeak(\'' + lgEscapeJs(lgPhonIpaSpeak(q.ipa)) + '\',\'' + region + '\')">🔊</button></div></div>';
+      '<div class="phon-prac-ipa">' + q.ipa + (spk ? ' <button class="phon-speak-btn" onclick="lgPhonSpeak(\'' + lgEscapeJs(spk) + '\',\'' + region + '\')">🔊</button>' : '') + '</div></div>';
     body += lgPracChoiceHtml(modeId, q, "w");
   } else if (modeId === "word2ipa") {
     body = '<div class="lg-card phon-prac-probe"><div class="phon-prac-q">下面单词的音标是？</div>' +
@@ -1829,9 +1830,36 @@ function lgPhonPracPlay(modeId) {
   }
   return head + body;
 }
-// 音标朗读时去除 / /，保留符号转 speak 文本（长音等交给 TTS 尝试）
+// 音标朗读：把 IPA 用「音标库骨架音节」逐音切分后再交给 TTS。
+// 绝不把 IPA 字符直接交给 TTS——那会被读成字母名/乱码，是「音标读音不准确」的根因。
 function lgPhonIpaSpeak(ipa) {
-  return String(ipa || "").replace(/\//g, "");
+  var s = String(ipa || "").replace(/[\/\[\]]/g, "");
+  if (!s) return "";
+  var map = {};
+  var all = (typeof lgPhonAll === "function") ? lgPhonAll() : [];
+  all.forEach(function (p) {
+    if (!p || !p.speakText) return;
+    [p.symbol, p.us, p.uk].forEach(function (k) {
+      if (!k) return;
+      k = String(k).replace(/[\/]/g, "");
+      if (k) map[k] = p.speakText;
+    });
+  });
+  var keys = Object.keys(map).sort(function (a, b) { return b.length - a.length; });
+  var out = [];
+  var i = 0;
+  while (i < s.length) {
+    var ch = s.charAt(i);
+    if (ch === "ˈ" || ch === "ˌ" || ch === "." || ch === " " || ch === "-") { i++; continue; }
+    var hit = null;
+    for (var k = 0; k < keys.length; k++) {
+      var key = keys[k];
+      if (key && s.substr(i, key.length) === key) { hit = key; break; }
+    }
+    if (hit) { out.push(map[hit]); i += hit.length; }
+    else { i++; } // 未识别符号跳过，避免 TTS 发出错误读音
+  }
+  return out.join(" ");
 }
 // 干扰项生成：随机取同词库里与正确答案不同的 w/ipa
 function lgPracDistract(q, field, n) {
