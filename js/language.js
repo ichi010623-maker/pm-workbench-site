@@ -630,19 +630,22 @@ function lgAddDays(dateStr, n) {
 
 function lgPickVoice(code) {
   if (!window.speechSynthesis) return null;
-  var vs = window.speechSynthesis.getVoices();
+  var vs = (typeof lgTtsVoices === "function") ? lgTtsVoices() : (window.speechSynthesis.getVoices() || []);
   var want = { en: "en", ja: "ja", ko: "ko" }[code] || "en";
   for (var i = 0; i < vs.length; i++) if (vs[i].lang && vs[i].lang.toLowerCase().indexOf(want) === 0) return vs[i];
   return null;
 }
 function lgSpeak(text, code, rate) {
-  if (!window.speechSynthesis) { showToast("当前环境不支持语音", "error"); return; }
-  window.speechSynthesis.cancel();
+  if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) { showToast("当前环境不支持语音朗读", "error"); return; }
   var u = new SpeechSynthesisUtterance(String(text));
   var v = lgPickVoice(code); if (v) u.voice = v;
   u.lang = (LG_META[code] || LG_META.en).tts;
   u.rate = rate || 0.9;
-  window.speechSynthesis.speak(u);
+  u.onerror = function (e) { try { console.warn("[TTS]", (e && e.error) || e); } catch (_) {} };
+  // 同步 speak（Apple 要求用户手势内执行）；仅在确实在播时才 cancel，避免 iOS 上静音
+  try { if (window.speechSynthesis.speaking || window.speechSynthesis.pending) window.speechSynthesis.cancel(); } catch (e) {}
+  try { window.speechSynthesis.speak(u); if (window.speechSynthesis.paused) window.speechSynthesis.resume(); } catch (e2) {}
+  if (typeof lgTtsWarm === "function") lgTtsWarm();
 }
 function lgShuffle(a) {
   a = a.slice();
@@ -935,65 +938,81 @@ function lgPhoneticsLoad(cb) {
     __lgPhonetics = j; cb && cb();
   }).catch(function () { cb && cb(); });
 }
+/* ---------- TTS 兼容层（Apple/Safari 关键）----------
+ * Apple（macOS Safari / iOS Safari）对 Web Speech 有两条硬限制：
+ *   1) speak() 必须在「用户手势」的同步调用栈里执行 —— 放进 setTimeout /
+ *      onvoiceschanged / Promise 里会被静默拦截（表现为完全没声音）。
+ *   2) voices 列表要到「首次用户手势之后」才异步加载 —— 页面加载时
+ *      getVoices() 返回空数组，并不代表设备不支持语音。
+ * 因此：不再因 voices 为空而把 speak() 推迟到异步回调；一律同步播，
+ *       并在首次任意手势里预热 voices，后续点击即可选到英文嗓音。 */
+var __lgTtsVoiceCache = null;
+var __lgTtsWarmed = false;
+function lgTtsVoices() {
+  try {
+    if (!window.speechSynthesis) return [];
+    var v = window.speechSynthesis.getVoices() || [];
+    if (v.length) __lgTtsVoiceCache = v;
+  } catch (e) {}
+  return __lgTtsVoiceCache || [];
+}
+function lgTtsWarm() {
+  if (__lgTtsWarmed) return;
+  __lgTtsWarmed = true;
+  try {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = function () { lgTtsVoices(); };
+  } catch (e) {}
+}
+// 首次任意手势即预热 voices（捕获阶段，早于业务逻辑；iOS 只有发生手势后才会加载 voices）
+(function () {
+  try {
+    var h = function () { lgTtsWarm(); };
+    document.addEventListener("touchstart", h, true);
+    document.addEventListener("touchend", h, true);
+    document.addEventListener("click", h, true);
+    document.addEventListener("keydown", h, true);
+  } catch (e) {}
+})();
+// 依据语种挑选最合适的嗓音（精确匹配语种优先，其次任意英文嗓音）
 function applyPhonVoice(u, vs, code) {
   if (!vs || !vs.length) return;
-  // 优先精确匹配语种（en-US / en-GB），否则退回任意英文嗓音，避免中文设备用中文嗓音读英文导致发音错误
   var best = null;
   for (var i = 0; i < vs.length; i++) { if (vs[i].lang && vs[i].lang.toLowerCase() === code.toLowerCase()) { best = vs[i]; break; } }
   if (!best) { for (var j = 0; j < vs.length; j++) { if (vs[j].lang && vs[j].lang.toLowerCase().indexOf("en") === 0) { best = vs[j]; break; } } }
   if (best) u.voice = best;
 }
 function lgPhonSpeak(word, region) {
-  if (!window.speechSynthesis) { showToast("当前环境不支持语音", "error"); return; }
-  window.speechSynthesis.cancel();
+  if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) { showToast("当前环境不支持语音朗读", "error"); return; }
   var code = region === "UK" ? "en-GB" : "en-US";
   var w = String(word || "");
+  if (!w) return;
   var u = new SpeechSynthesisUtterance(w);
   u.lang = code;
-  // 朗读速率：根据文本类型自适应——
-  //   - 骨架音节（≤3 字符如 "ee"/"ay"/"puh"）：0.55 让 TTS 保留元音时长，听清长/短音差
-  //   - 单词（4-8 字符）：0.7 让 Minimal Pairs（sheep/ship、seat/sit）元音时长听得出
-  //   - 较长单词/句子：0.85
+  // 朗读速率：骨架音节（≤3）0.55 保留元音时长 / 单词（4-8）0.7 便于听长短音 / 长句 0.85
   var wl = w.length;
   u.rate = wl <= 3 ? 0.55 : (wl <= 8 ? 0.7 : 0.85);
-  var vs = []; try { vs = window.speechSynthesis.getVoices() || []; } catch (e) {}
-  // 中文设备首次点击时常因语音列表尚未就绪（getVoices 为空）而被迫用默认（中文）嗓音，导致发音错误；
-  // 此时等待 onvoiceschanged 就绪后再播，确保选中英文嗓音。
-  if (!vs.length) {
-    var fired = false;
-    var retry = function () {
-      if (fired) return;
-      var v2 = []; try { v2 = window.speechSynthesis.getVoices() || []; } catch (e2) {}
-      if (!v2.length) return;
-      fired = true;
-      window.speechSynthesis.cancel();
-      applyPhonVoice(u, v2, code);
-      window.speechSynthesis.speak(u);
-    };
-    try { window.speechSynthesis.onvoiceschanged = retry; } catch (e3) {}
-    setTimeout(retry, 350);
-    return;
-  }
+  u.pitch = 1; u.volume = 1;
+  // 有英文嗓音就显式指定；没有也照样播（u.lang 让系统自选，Apple 上不指定 voice 反而更不易静音）
+  var vs = lgTtsVoices();
   applyPhonVoice(u, vs, code);
-  // 双重保险：若 applyPhonVoice 未匹配到 en-US/en-GB，强制再用 voices[].lang 前缀匹配
   if (!u.voice) {
     for (var i = 0; i < vs.length; i++) {
       if (vs[i].lang && vs[i].lang.toLowerCase().indexOf("en") === 0) { u.voice = vs[i]; break; }
     }
   }
-  window.speechSynthesis.speak(u);
-  // 发音 = 学习动作，喂给 lgLearnTimer
-  try { lgTouchActive("tts:" + w); } catch (e) {}
-}
-// 预热 TTS 语音列表：中文设备首次点击常因 voices 尚未加载而被迫用默认（中文）嗓音，导致发音错误
-(function () {
+  u.onerror = function (e) { try { console.warn("[TTS]", (e && e.error) || e); } catch (_) {} };
+  // ⚠️ 必须在用户手势内同步 speak()；绝不能 setTimeout 后再播（Apple 会拦截）
+  try { if (window.speechSynthesis.speaking || window.speechSynthesis.pending) window.speechSynthesis.cancel(); } catch (e) {}
   try {
-    if (window.speechSynthesis) {
-      window.speechSynthesis.getVoices();
-      window.speechSynthesis.onvoiceschanged = function () { window.speechSynthesis.getVoices(); };
-    }
-  } catch (e) {}
-})();
+    window.speechSynthesis.speak(u);
+    if (window.speechSynthesis.paused) window.speechSynthesis.resume(); // iOS 偶发 paused 卡死
+  } catch (e2) { showToast("语音朗读失败", "error"); }
+  if (!vs.length) lgTtsWarm(); // 首次点击 voices 可能尚未就绪：触发预热供后续点击使用
+  // 发音 = 学习动作，喂给 lgLearnTimer
+  try { lgTouchActive("tts:" + w); } catch (e3) {}
+}
 
 /* ============================================================
  * 🕒 全局学习计时器（v5.9.101 起）
