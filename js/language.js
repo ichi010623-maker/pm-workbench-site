@@ -1831,8 +1831,8 @@ function lgPhonPracPlay(modeId) {
   if (modeId === "ipa2word") {
     // 音标 + 朗读按钮；不显示中文释义（会剧透答案）
     var spk = lgPhonIpaSpeak(q.ipa);
-    body = '<div class="lg-card phon-prac-probe"><div class="phon-prac-q">这个音标读什么？</div>' +
-      '<div class="phon-prac-ipa">' + q.ipa + (spk ? ' <button class="phon-speak-btn" onclick="lgPhonSpeak(\'' + lgEscapeJs(spk) + '\',\'' + region + '\')">🔊</button>' : '') + '</div></div>';
+    body = '<div class="lg-card phon-prac-probe"><div class="phon-prac-q">这个音标读什么？<span class="lg-sub">（🔊 逐音朗读音标，非整词发音）</span></div>' +
+      '<div class="phon-prac-ipa">' + q.ipa + (spk ? ' <button class="phon-speak-btn" title="逐音朗读音标（非整词发音）" onclick="lgPhonSpeak(\'' + lgEscapeJs(spk) + '\',\'' + region + '\')">🔊</button>' : '') + '</div></div>';
     body += lgPracChoiceHtml(modeId, q, "w");
   } else if (modeId === "word2ipa") {
     body = '<div class="lg-card phon-prac-probe"><div class="phon-prac-q">下面单词的音标是？</div>' +
@@ -1851,8 +1851,17 @@ function lgPhonPracPlay(modeId) {
 }
 // 音标朗读：把 IPA 用「音标库骨架音节」逐音切分后再交给 TTS。
 // 绝不把 IPA 字符直接交给 TTS——那会被读成字母名/乱码，是「音标读音不准确」的根因。
+// IPA 归一化：不同数据源混用「脚本字符」与「ASCII」等价符号，不归一会导致切分漏音
+//（典型：phonetics.json 用 U+0261「ɡ」，spelling_patterns.json 用 ASCII「g」→ g 音被整段丢掉）
+function lgIpaNorm(x) {
+  return String(x == null ? "" : x)
+    .replace(/ɡ/g, "g")   // U+0261 脚本 g → ASCII g
+    .replace(/ː/g, ":")   // U+02D0 长音符 → ASCII :
+    .replace(/ʧ/g, "tʃ").replace(/ʤ/g, "dʒ")
+    .replace(/ɹ/g, "r");
+}
 function lgPhonIpaSpeak(ipa) {
-  var s = String(ipa || "").replace(/[\/\[\]]/g, "");
+  var s = lgIpaNorm(String(ipa || "").replace(/[\/\[\]]/g, ""));
   if (!s) return "";
   var map = {};
   var all = (typeof lgPhonAll === "function") ? lgPhonAll() : [];
@@ -1860,8 +1869,8 @@ function lgPhonIpaSpeak(ipa) {
     if (!p || !p.speakText) return;
     [p.symbol, p.us, p.uk].forEach(function (k) {
       if (!k) return;
-      k = String(k).replace(/[\/]/g, "");
-      if (k) map[k] = p.speakText;
+      var kk = lgIpaNorm(String(k).replace(/[\/]/g, ""));
+      if (kk) map[kk] = p.speakText;
     });
   });
   var keys = Object.keys(map).sort(function (a, b) { return b.length - a.length; });
