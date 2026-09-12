@@ -58,7 +58,7 @@
           "word": "city",
           "zh": "城市",
           "hint": "C 后接 e/i/y 常发 /s/",
-          "speakText": "s",
+          "speakText": "suh",
           "wipa": "/ˈsɪti/"
         }
       ],
@@ -149,7 +149,7 @@
           "word": "hat",
           "zh": "帽子",
           "hint": "喉咙呼气，类似哈气",
-          "speakText": "h",
+          "speakText": "huh",
           "wipa": "/hæt/"
         }
       ],
@@ -330,7 +330,7 @@
           "word": "sun",
           "zh": "太阳",
           "hint": "清音",
-          "speakText": "s",
+          "speakText": "suh",
           "wipa": "/sʌn/"
         },
         {
@@ -338,7 +338,7 @@
           "word": "is",
           "zh": "是",
           "hint": "词尾 s 在浊音后常发 /z/",
-          "speakText": "zz",
+          "speakText": "zuh",
           "wipa": "/ɪz/"
         }
       ],
@@ -391,7 +391,7 @@
           "word": "van",
           "zh": "货车",
           "hint": "浊音：上齿咬下唇 + 声带震动",
-          "speakText": "v",
+          "speakText": "vuh",
           "wipa": "/væn/"
         }
       ],
@@ -459,7 +459,7 @@
           "word": "zoo",
           "zh": "动物园",
           "hint": "浊音，声带震动",
-          "speakText": "zz",
+          "speakText": "zuh",
           "wipa": "/zuː/"
         }
       ],
