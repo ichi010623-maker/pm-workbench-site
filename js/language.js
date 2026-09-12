@@ -1150,7 +1150,9 @@ function lgLT_dashboardHtml() {
 
 function lgPhonExamplesHtml(exs, region) {
   return (exs || []).map(function (x) {
-    return '<span class="lg-phon-ex">' + escapeHtml(x[0]) +
+    return '<span class="lg-phon-ex">' +
+      '<span class="lg-phon-w">' + escapeHtml(x[0]) + '</span>' +
+      (x[2] ? '<span class="lg-phon-ipa">' + escapeHtml(x[2]) + '</span>' : '') +
       '<button class="lg-phon-sound" onclick="lgPhonSpeak(\'' + lgEscapeJs(x[0]) + '\',\'' + region + '\')">🔊</button>' +
       '<span class="lg-phon-cn">' + escapeHtml(x[1]) + '</span></span>';
   }).join("");
@@ -1160,17 +1162,21 @@ function lgPhonCombosHtml(combos, region) {
   return combos.map(function (c) {
     return '<span class="lg-phon-combo"><b>' + escapeHtml(c.letters) + '</b> → ' +
       (c.words || []).map(function (w) {
-        return '<span class="lg-phon-ex">' + escapeHtml(w[0]) +
+        return '<span class="lg-phon-ex">' +
+          '<span class="lg-phon-w">' + escapeHtml(w[0]) + '</span>' +
+          (w[2] ? '<span class="lg-phon-ipa">' + escapeHtml(w[2]) + '</span>' : '') +
           '<button class="lg-phon-sound" onclick="lgPhonSpeak(\'' + lgEscapeJs(w[0]) + '\',\'' + region + '\')">🔊</button>' +
           '<span class="lg-phon-cn">' + escapeHtml(w[1]) + '</span></span>';
       }).join("") + '</span>';
   }).join("");
 }
 function lgPhonCard(p, region) {
+  var speak = p.speakText || p.symbol.replace(/\//g, "");
   return '<div class="lg-card lg-phon-card">' +
     '<div class="lg-phon-head">' +
       '<span class="lg-phon-sym">' + escapeHtml(p.symbol) + '</span>' +
       '<span class="lg-phon-tag">' + escapeHtml(p.type || "") + '</span>' +
+      '<button class="lg-phon-sound lg-phon-sound-lg" onclick="lgPhonSpeak(\'' + lgEscapeJs(speak) + '\',\'' + region + '\')" title="听音标本身发音">🔊 读音标</button>' +
     '</div>' +
     '<div class="lg-phon-usuk">' +
       (p.us !== p.uk ? '美式 <b>' + escapeHtml(p.us) + '</b> · 英式 <b>' + escapeHtml(p.uk) + '</b>' : '美/英 <b>' + escapeHtml(p.us) + '</b>') +
@@ -1415,7 +1421,7 @@ function lgPhonLetterDetail(ch) {
   var sndHtml = (l.sounds || []).map(function (s) {
     return '<div class="phon-snd-row">' +
       '<div class="phon-snd-ipa">' + s.ipa + ' <button class="phon-speak-btn" onclick="lgPhonSpeak(\'' + lgEscapeJs(s.speakText || s.ipa.replace(/[\/]/g, "")) + '\',\'' + region + '\')">🔊</button></div>' +
-      '<div class="phon-snd-word"><b>' + s.word + '</b> ' + s.zh + '</div>' +
+      '<div class="phon-snd-word"><b>' + s.word + '</b>' + (s.wipa ? ' <span class="phon-snd-wipa">' + escapeHtml(s.wipa) + '</span>' : '') + ' ' + s.zh + '</div>' +
       '<button class="phon-speak-btn sm" onclick="event.stopPropagation();lgPhonSpeak(\'' + lgEscapeJs(s.word) + '\',\'' + region + '\')">🔊 读词</button>' +
       '<div class="phon-snd-hint">' + s.hint + '</div>' +
       '</div>';
@@ -1975,7 +1981,7 @@ function lgPhonPairTrain(id) {
   var head = '<div class="lg-card"><div class="lg-card-h">👂 听辨训练 <span class="lg-sub">' + p.a + ' vs ' + p.b + '</span></div>' +
     '<div class="lg-row" style="gap:8px"><button class="lg-btn ghost" onclick="lgPhonView=\'pairs\';render()">← 返回</button>' +
     '<button class="lg-btn ghost" onclick="lgPhonView=\'lib\';render()">📚 音标详情</button></div>' +
-    '<div class="lg-hint">点 🔊 听发音，判断是 ' + p.a + '（如 ' + p.aWord + '）还是 ' + p.b + '（如 ' + p.bWord + '）。</div></div>';
+    '<div class="lg-hint">点 🔊 听发音，判断是 ' + p.a + '（如 ' + cur[0] + '）还是 ' + p.b + '（如 ' + cur[1] + '）。</div></div>';
 
   // 隐藏标准答案（存到 state 供判题，不渲染出来）
   s._rightIsA = rightIsA;
@@ -1987,10 +1993,10 @@ function lgPhonPairTrain(id) {
     '<div class="phon-train-zh">（' + rightZh + '）</div>' + // 中文释义提供线索但不暴露单词拼写
     '</div>';
 
-  var opts = '<div class="lg-card"><div class="lg-card-h">选择你听到的音</div>' +
+  var opts = '<div class="lg-card"><div class="lg-card-h">选择你听到的音（本轮：' + cur[0] + ' / ' + cur[1] + '）</div>' +
     '<div class="phon-train-opts">' +
-      '<button class="phon-train-opt" onclick="lgPairAnswer(\'' + id + '\',\'A\')">' + p.a + '<div class="phon-opt-word">' + p.aWord + '</div></button>' +
-      '<button class="phon-train-opt" onclick="lgPairAnswer(\'' + id + '\',\'B\')">' + p.b + '<div class="phon-opt-word">' + p.bWord + '</div></button>' +
+      '<button class="phon-train-opt" onclick="lgPairAnswer(\'' + id + '\',\'A\')">' + p.a + '<div class="phon-opt-word">' + cur[0] + '</div></button>' +
+      '<button class="phon-train-opt" onclick="lgPairAnswer(\'' + id + '\',\'B\')">' + p.b + '<div class="phon-opt-word">' + cur[1] + '</div></button>' +
     '</div></div>';
 
   // 反馈区
