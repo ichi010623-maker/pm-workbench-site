@@ -82,6 +82,8 @@
 }
 .auth-btn-primary { background: var(--accent-blue); color: #fff; }
 .auth-btn-ghost { background: var(--bg-tertiary); color: var(--text-primary); }
+.auth-btn-offline { background: transparent; color: var(--text-tertiary); margin-top: 6px; font-size: 12px; padding: 8px 16px; border: 1px dashed var(--border-color, #e2e8f0); }
+.auth-btn-offline:hover { background: var(--bg-secondary, #f8fafc); color: var(--text-primary); }
 .auth-msg { color: var(--accent-red); font-size: 13px; min-height: 18px; margin-bottom: 8px; }
 .auth-hint { color: var(--text-tertiary); font-size: 11px; margin-top: 12px; line-height: 1.5; }
 
