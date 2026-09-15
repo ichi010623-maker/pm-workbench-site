@@ -6971,3 +6971,45 @@ mark{background:#fff3a3;color:inherit;border-radius:3px;padding:0 1px}
 .nv-bar-label{font-size:9px;color:#94a3b8;writing-mode:horizontal-tb}
 .nv-recap-list{margin:6px 0 0 18px;line-height:1.85;font-size:12px;color:#1e293b}
 .nv-recap-list li{margin-bottom:3px}
+
+/* ====== 📚 小说创作 v5.9.133 skill 化追加 ====== */
+.nv-rules-card{margin-bottom:10px}
+.nv-rules{display:grid;grid-template-columns:1fr;gap:6px;margin-top:6px}
+.nv-rule-block{background:#faf5ff;border:1px solid #ede9fe;border-radius:7px;padding:7px 10px;font-size:12px}
+.nv-rule-block ul{margin:4px 0 0 16px;line-height:1.7;color:#1e293b}
+.nv-rule-block li{margin-bottom:2px}
+.nv-rule-p0{color:#b91c1c;font-weight:700}
+.nv-rule-p1{color:#c2410c;font-weight:700}
+.nv-rule-p2{color:#a16207;font-weight:700}
+
+.nv-spec-card{background:#faf5ff;border:1px solid #ede9fe;border-radius:8px;padding:9px 11px;margin-top:8px;font-size:12px;color:#1e293b;line-height:1.6}
+.nv-spec-h{font-weight:700;color:#6d28d9;margin-bottom:5px}
+.nv-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px}
+.nv-spec-grid > div{padding:5px 7px;background:#fff;border-radius:5px;border:1px solid #ede9fe}
+.nv-spec-row{margin-top:4px;line-height:1.7}
+
+.nv-redline-card{margin-top:8px;border-left:3px solid #ef4444}
+.nv-redline-row{font-size:12px;padding:5px 0;border-top:1px dashed #fecaca;line-height:1.6;color:#1e293b}
+.nv-redline-row:first-child{border-top:0}
+.nv-redline-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.nv-redline-tag{font-size:10px;font-weight:600;border-radius:4px;padding:1px 7px;display:inline-block}
+.nv-tag-P0{background:#fee2e2;color:#b91c1c}
+.nv-tag-P1{background:#ffedd5;color:#c2410c}
+.nv-tag-P2{background:#fef9c3;color:#a16207}
+
+.nv-rv-cell-mini{background:#fff;border:1px solid #ede9fe;border-radius:5px;padding:4px 5px;text-align:center;min-width:60px}
+.nv-rv-label-mini{font-size:9px;color:#64748b}
+.nv-rv-val-mini{font-size:13px;font-weight:700}
+.nv-rv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:6px 0}
+.nv-rv-cell{background:#faf5ff;border:1px solid #ede9fe;border-radius:7px;padding:6px;text-align:center}
+.nv-rv-label{font-size:10px;color:#64748b}
+.nv-rv-val{font-size:15px;font-weight:700;color:#6d28d9}
+
+.nv-spec-help .card-body{font-size:12px;line-height:1.7}
+.nv-advance-intro{margin-bottom:10px}
+
+.nv-log-row{font-size:12px;padding:5px 0;border-top:1px dashed #ede9fe;line-height:1.6;color:#1e293b}
+.nv-log-row:first-child{border-top:0}
+.nv-log-ts{color:#8b5cf6;font-weight:600;font-family:ui-monospace,monospace;font-size:11px;margin-right:4px}
+
+.nv-rev-total{margin-top:4px;padding:4px 8px;font-size:12px;color:#475569}
