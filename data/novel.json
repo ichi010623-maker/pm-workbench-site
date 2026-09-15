@@ -850,7 +850,79 @@
       "goal": "林渊与老丹逃亡，老丹为救他重伤，留半截残玉。",
       "draft": "火从宗门大殿一路烧到了后山，林渊半拖半拽着老丹，踏过满地的瓦砾。老丹的左臂已经被烧得卷了边，但他没停下，只是把那半截残玉塞进林渊掌心：\"留着，将来有人会来认。\"林渊想说\"师父\"，却被一口烟呛住。等他终于冲出禁地入口，回头时只见师父倒在火光中，嘴型像是要说一个字，却再也没能说出。第二年春天，林渊在那条小溪边埋了一只木牌，没有立碑。他开始明白，复仇这件事不是热血，是孤独。",
       "wordCount": 161,
-      "status": "final"
+      "status": "final",
+      "spec": {
+        "before": {
+          "characters": [
+            {
+              "name": "林渊",
+              "state": "逃亡中",
+              "location": "荒山雪夜"
+            },
+            {
+              "name": "老丹",
+              "state": "重伤",
+              "location": "禁地入口"
+            }
+          ],
+          "hooks": [
+            "老丹遗言"
+          ]
+        },
+        "after": {
+          "characters": [
+            {
+              "name": "林渊",
+              "state": "独自复仇者",
+              "location": "溪边墓前"
+            },
+            {
+              "name": "老丹",
+              "state": "死亡",
+              "location": "—"
+            }
+          ],
+          "advances": [
+            "师父之死悬念"
+          ]
+        },
+        "must_happen": [
+          "火攻宗门",
+          "老丹断后",
+          "半截残玉",
+          "立碑"
+        ],
+        "tension": [
+          {
+            "position": 0,
+            "value": 2
+          },
+          {
+            "position": 30,
+            "value": 6
+          },
+          {
+            "position": 70,
+            "value": 9
+          },
+          {
+            "position": 100,
+            "value": 4
+          }
+        ],
+        "key_scenes": [
+          "宗门前火海",
+          "禁地相拥",
+          "残玉交递"
+        ],
+        "new_hooks": [
+          "半截残玉下落",
+          "断气前口型"
+        ]
+      },
+      "reviewFlags": [
+        "P0:insight_ending"
+      ]
     },
     {
       "id": "ch1_02",
@@ -916,7 +988,63 @@
       "goal": "陈哲独自调原型，遇见路过的苏宁。",
       "draft": "陈哲在会议室改到第十一版原型时，已经快凌晨两点。屏幕上的光标闪烁，他对着那个按钮说：\"我怕有一天它会认识我。\"门被人从外面推开，苏宁站在走廊尽头的窗边，咖啡杯还冒热气。她没进来，只是隔着玻璃看了他一眼。第二天公司群里多了一个人，备注是\"苏宁 / 战略投资部\"。陈哲没想到，自己随口的一句话，会变成一年后的公司名字。",
       "wordCount": 135,
-      "status": "final"
+      "status": "final",
+      "spec": {
+        "before": {
+          "characters": [
+            {
+              "name": "陈哲",
+              "state": "连续调试",
+              "location": "会议室深夜"
+            }
+          ],
+          "hooks": [
+            "一句话变成公司名"
+          ]
+        },
+        "after": {
+          "characters": [
+            {
+              "name": "陈哲",
+              "state": "被看见",
+              "location": "走廊尽头"
+            }
+          ],
+          "advances": [
+            "苏宁加入"
+          ]
+        },
+        "must_happen": [
+          "凌晨调试",
+          "咖啡路过",
+          "一句话预言"
+        ],
+        "tension": [
+          {
+            "position": 0,
+            "value": 3
+          },
+          {
+            "position": 50,
+            "value": 6
+          },
+          {
+            "position": 100,
+            "value": 5
+          }
+        ],
+        "key_scenes": [
+          "第十一版原型",
+          "走廊尽头一眼",
+          "群备注"
+        ],
+        "new_hooks": [
+          "咖啡杯冒热气"
+        ]
+      },
+      "reviewFlags": [
+        "P1:abstract_psych"
+      ]
     },
     {
       "id": "ch2_02",
@@ -986,7 +1114,38 @@
           "type": "continuity",
           "note": "姜禾腰间圣女令牌与第 5 章玄女降旨场景衔接略生硬"
         }
-      ]
+      ],
+      "scores": {
+        "reader": {
+          "score": 88,
+          "weight": 25,
+          "note": "开篇吸引力足"
+        },
+        "editor": {
+          "score": 94,
+          "weight": 25,
+          "note": "无错别字病句"
+        },
+        "storyteller": {
+          "score": 86,
+          "weight": 25,
+          "note": "伏笔铺设到位"
+        },
+        "literary": {
+          "score": 89,
+          "weight": 15,
+          "note": "心理刻画克制"
+        },
+        "troll": {
+          "score": 78,
+          "weight": 10,
+          "note": "中段略显套路"
+        }
+      },
+      "flags": [
+        "P1:trope_savior"
+      ],
+      "finalScore": 87
     },
     {
       "id": "rev_02",
@@ -1013,6 +1172,43 @@
           "note": "开篇节奏略慢，可考虑压缩到 2 段"
         }
       ]
+    },
+    {
+      "id": "rev_01b",
+      "chapterId": "ch1_01",
+      "scores": {
+        "reader": {
+          "score": 85,
+          "weight": 25,
+          "note": "开篇张力足"
+        },
+        "editor": {
+          "score": 72,
+          "weight": 25,
+          "note": "命中 1 个 P0 感悟式结尾"
+        },
+        "storyteller": {
+          "score": 82,
+          "weight": 25,
+          "note": "伏笔铺设到位"
+        },
+        "literary": {
+          "score": 88,
+          "weight": 15,
+          "note": "环境描写克制"
+        },
+        "troll": {
+          "score": 80,
+          "weight": 10,
+          "note": "套路化不重"
+        }
+      },
+      "flags": [
+        "P0:insight_ending"
+      ],
+      "notes": "5 维评审示例",
+      "finalScore": 81,
+      "ts": "2026-09-15T20:00:00Z"
     }
   ],
   "milestones": [
@@ -1040,5 +1236,6 @@
       "chCompleted": 1,
       "reflection": "都市题材节奏更紧，对话占比要压到 30% 以内。"
     }
-  ]
+  ],
+  "advances": []
 }
