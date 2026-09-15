@@ -7,7 +7,7 @@
    ============================================ */
 
 // ===== APP Version (bump on every deploy to force PWA refresh) =====
-var APP_VERSION = "5.9.129";
+var APP_VERSION = "5.9.130";
 
 // ===== 视口高度实测（修复 iOS PWA 下 -webkit-fill-available / dvh 偏矮导致底栏离屏底有空白）=====
 function setAppHeight() {
@@ -5906,6 +5906,19 @@ function bindEvents() {
 // ===== Init (Phase 1: Lock Screen Check) =====
 async function init() {
   try {
+    // v5.9.130: URL 参数应急绕过 ?bypass=1 — 跳过隐私/PIN/登录直接进应用
+    // 本地数据完整保留；仅不进行云同步。供 iPhone Safari 隐私模式清 token 后使用
+    if (typeof location !== "undefined" && location.search && location.search.indexOf("bypass=1") >= 0) {
+      var __hideAll = function(id) { var el = document.getElementById(id); if (el) el.classList.add("hidden"); };
+      __hideAll("privacy-notice"); __hideAll("lock-screen"); __hideAll("auth-screen");
+      var __appEl = document.getElementById("app"); if (__appEl) __appEl.classList.remove("hidden");
+      try { if (typeof SyncManager !== "undefined") SyncManager._isAuthed = true; } catch (__e1) {}
+      if (typeof PrivacyManager !== "undefined") { try { PrivacyManager._isLocked = false; } catch (__e2) {} }
+      if (typeof showToast === "function") showToast("⚡ 应急绕过模式（数据仅本地）", "warn");
+      try { await initApp(); } catch (__e3) { console.error("[bypass] initApp failed:", __e3); }
+      return;
+    }
+
     // Theme
     var savedTheme = localStorage.getItem("hw_pm_theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
@@ -6333,6 +6346,19 @@ if (document.readyState === "loading") {
     document.getElementById("app").classList.remove("hidden");
   }
   function bindAuthUI() {
+    // v5.9.130: 离线模式按钮（跳过 Supabase 登录，本地数据完整保留）
+    var ob = document.getElementById("auth-offline-btn");
+    if (ob && !ob.__bound) {
+      ob.__bound = true;
+      ob.onclick = function() {
+        var __hide = function(id) { var el = document.getElementById(id); if (el) el.classList.add("hidden"); };
+        __hide("auth-screen"); __hide("lock-screen"); __hide("privacy-notice");
+        var __app = document.getElementById("app"); if (__app) __app.classList.remove("hidden");
+        try { if (typeof SyncManager !== "undefined") SyncManager._isAuthed = true; } catch (__e1) {}
+        try { initApp(); } catch (__e2) { console.error("[offline] initApp failed:", __e2); }
+        if (typeof showToast === "function") showToast("⚡ 离线模式（数据仅本地）", "warn");
+      };
+    }
     var lb = document.getElementById("auth-login-btn");
     var sb = document.getElementById("auth-signup-btn");
     if (lb) lb.onclick = function() {
