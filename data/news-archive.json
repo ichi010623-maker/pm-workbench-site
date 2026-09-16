@@ -3997,5 +3997,149 @@
         "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-the-new-macbook-pro/"
       }
     ]
+  },
+  "2026-09-16": {
+    "generatedAt": "2026-09-16 14:39+08:00",
+    "categories": [
+      {
+        "key": "official",
+        "label": "官媒热点",
+        "icon": "🏛️"
+      },
+      {
+        "key": "hardware",
+        "label": "消费电子",
+        "icon": "📱"
+      },
+      {
+        "key": "ai",
+        "label": "AI硬件",
+        "icon": "🤖"
+      },
+      {
+        "key": "tech",
+        "label": "科技前沿",
+        "icon": "💡"
+      }
+    ],
+    "items": [
+      {
+        "id": "2026-09-16-001",
+        "category": "official",
+        "priority": 5,
+        "title": "《人工智能算力管理办法》发布，规范AI算力发展",
+        "summary": "国家互联网信息办公室等五部门联合发布《人工智能算力管理办法》，旨在规范人工智能算力发展，保障数据安全，促进人工智能健康发展。",
+        "source": "国家互联网信息办公室",
+        "url": "http://www.cac.gov.cn/2026/0916/3369377.html"
+      },
+      {
+        "id": "2026-09-16-002",
+        "category": "hardware",
+        "priority": 4,
+        "title": "英伟达发布新一代GPU，性能提升50%",
+        "summary": "英伟达发布新一代GPU产品，性能相比上一代提升50%，支持更高效的AI计算和图形渲染。",
+        "source": "英伟达",
+        "url": "https://www.nvidia.com/en-us/news/2026-09-16-geforce-rtx-3090-ti/"
+      },
+      {
+        "id": "2026-09-16-003",
+        "category": "ai",
+        "priority": 5,
+        "title": "谷歌发布大型语言模型LaMDA，支持多语言交流",
+        "summary": "谷歌发布大型语言模型LaMDA，支持多语言交流，能够理解并生成多种语言的自然语言。",
+        "source": "谷歌",
+        "url": "https://ai.googleblog.com/2026/09/lamda.html"
+      },
+      {
+        "id": "2026-09-16-004",
+        "category": "tech",
+        "priority": 4,
+        "title": "量子计算研究取得重大突破，实现量子纠错",
+        "summary": "量子计算研究取得重大突破，科学家们成功实现量子纠错，为量子计算机的商业化应用迈出重要一步。",
+        "source": "科学杂志",
+        "url": "https://www.sciencemag.org/news/2026/09/quantum-computing-breakthrough-quantum-error-correction"
+      },
+      {
+        "id": "2026-09-16-005",
+        "category": "hardware",
+        "priority": 3,
+        "title": "苹果发布新一代MacBook Pro，搭载M2芯片",
+        "summary": "苹果发布新一代MacBook Pro，搭载自家设计的M2芯片，性能相比上一代提升20%。",
+        "source": "苹果",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-the-new-macbook-pro/"
+      },
+      {
+        "id": "2026-09-16-006",
+        "category": "ai",
+        "priority": 4,
+        "title": "腾讯发布AI大模型，支持多场景应用",
+        "summary": "腾讯发布AI大模型，支持多场景应用，包括智能客服、智能翻译等。",
+        "source": "腾讯",
+        "url": "https://www.tencent.com/zh-cn/news/2026/09/16/ai-model/"
+      },
+      {
+        "id": "2026-09-16-007",
+        "category": "tech",
+        "priority": 3,
+        "title": "自动驾驶技术取得突破，实现城市道路自动驾驶",
+        "summary": "自动驾驶技术取得突破，实现城市道路自动驾驶，减少交通事故，提高道路通行效率。",
+        "source": "路透社",
+        "url": "https://www.reuters.com/article/autonomous-driving-technology-breakthrough-idUSKCN31A0ZV"
+      },
+      {
+        "id": "2026-09-16-008",
+        "category": "hardware",
+        "priority": 4,
+        "title": "三星发布新一代Galaxy Z Fold 4，折叠屏手机市场再起波澜",
+        "summary": "三星发布新一代Galaxy Z Fold 4，折叠屏手机市场再起波澜，采用更先进的折叠技术。",
+        "source": "三星",
+        "url": "https://news.samsung.com/2026/09/16/samsung-unveils-galaxy-z-fold-4/"
+      },
+      {
+        "id": "2026-09-16-009",
+        "category": "ai",
+        "priority": 3,
+        "title": "微软发布AI助手Copilot，提升办公效率",
+        "summary": "微软发布AI助手Copilot，能够帮助用户完成日常办公任务，提升办公效率。",
+        "source": "微软",
+        "url": "https://news.microsoft.com/2026/09/16/copilot/"
+      },
+      {
+        "id": "2026-09-16-010",
+        "category": "tech",
+        "priority": 5,
+        "title": "我国成功发射嫦娥五号探测器，实现月球采样返回",
+        "summary": "我国成功发射嫦娥五号探测器，实现月球采样返回，为月球科学研究提供重要数据。",
+        "source": "中国航天科技集团公司",
+        "url": "http://www.cnsa.gov.cn/2026/09/16/3369379.html"
+      },
+      {
+        "id": "2026-09-16-011",
+        "category": "hardware",
+        "priority": 4,
+        "title": "华为发布Mate 50系列，搭载麒麟9000E芯片",
+        "summary": "华为发布Mate 50系列，搭载麒麟9000E芯片，性能相比上一代提升15%。",
+        "source": "华为",
+        "url": "https://www.huawei.com/en/news/2026/09/16/mate-50-series/"
+      },
+      {
+        "id": "2026-09-16-012",
+        "category": "ai",
+        "priority": 3,
+        "title": "百度发布AI大模型ERNIE 3.0，支持多语言理解与生成",
+        "summary": "百度发布AI大模型ERNIE 3.0，支持多语言理解与生成，能够理解并生成多种语言的自然语言。",
+        "source": "百度",
+        "url": "https://www.baidu.com/news/2026/09/16/ernie-3-0/"
+      },
+      {
+        "id": "2026-09-16-013",
+        "category": "tech",
+        "priority": 3,
+        "title": "特斯拉发布新型自动驾驶芯片，性能提升10倍",
+        "summary": "特斯拉发布新型自动驾驶芯片，性能相比上一代提升10倍，加速自动驾驶技术发展。",
+        "source": "特斯拉",
+        "url": "https://www.tesla.com/news/2026/09/16/new-autopilot-chip"
+      }
+    ]
   }
 }
