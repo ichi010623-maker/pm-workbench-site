@@ -837,7 +837,119 @@
         "content": "Sleep is crucial for physical and mental health. Understanding sleep cycles can improve sleep quality and energy levels.",
         "translation": "睡眠对身心健康至关重要。了解睡眠周期可以提高睡眠质量和精力水平。"
       }
+    ],
+    "2026-09-17": [
+      {
+        "level": "入门",
+        "title": "Smartphones",
+        "content": "Smartphones have become an essential part of our daily lives. They help us stay connected and access information quickly.",
+        "translation": "智能手机已经成为我们日常生活的重要组成部分。它们帮助我们保持联系并快速获取信息。"
+      },
+      {
+        "level": "进阶",
+        "title": "Cooking with Herbs",
+        "content": "Herbs add flavor to dishes without extra calories. They are a healthy alternative to salt and sugar.",
+        "translation": "香草可以为菜肴增添风味而不增加额外的卡路里。它们是盐和糖的健康替代品。"
+      },
+      {
+        "level": "挑战",
+        "title": "The Solar System",
+        "content": "The solar system consists of the sun, eight planets, and many moons. It is a fascinating part of our universe.",
+        "translation": "太阳系由太阳、八大行星和许多卫星组成。它是我们宇宙中一个迷人的部分。"
+      },
+      {
+        "level": "入门",
+        "title": "Public Transportation",
+        "content": "Using public transportation is a great way to save money and reduce traffic congestion.",
+        "translation": "使用公共交通是省钱和减少交通拥堵的好方法。"
+      },
+      {
+        "level": "进阶",
+        "title": "The Importance of Sleep",
+        "content": "Sleep is crucial for physical and mental health. It helps us recharge and perform better.",
+        "translation": "睡眠对身心健康至关重要。它帮助我们充电并表现更好。"
+      },
+      {
+        "level": "挑战",
+        "title": "The Brain",
+        "content": "The brain is a complex organ that controls our thoughts, emotions, and actions. It is the most powerful organ in our body.",
+        "translation": "大脑是一个复杂的器官，它控制着我们的思想、情感和行为。它是我们身体中最强大的器官。"
+      },
+      {
+        "level": "入门",
+        "title": "Art Museums",
+        "content": "Art museums are places where we can learn about different cultures and artistic styles.",
+        "translation": "艺术博物馆是我们了解不同文化和艺术风格的地方。"
+      },
+      {
+        "level": "进阶",
+        "title": "The Ocean",
+        "content": "The ocean covers most of the Earth's surface and is home to millions of species. It is essential for our survival.",
+        "translation": "海洋覆盖了地球的大部分表面，是数百万种生物的家园。它是我们生存的关键。"
+      },
+      {
+        "level": "挑战",
+        "title": "The Human Body",
+        "content": "The human body is an intricate system of organs and tissues that work together to keep us alive. It is a marvel of nature.",
+        "translation": "人体是一个由器官和组织构成的复杂系统，它们共同工作以维持我们的生命。它是自然的奇迹。"
+      }
+    ],
+    "2026-09-19": [
+      {
+        "level": "入门",
+        "title": "Smart Cars",
+        "content": "Smart cars are becoming more common. They can help drivers avoid accidents and save fuel. Features like automatic braking and lane keeping are popular.",
+        "translation": "智能汽车越来越普遍。它们可以帮助司机避免事故并节省燃油。自动刹车和车道保持等特性很受欢迎。"
+      },
+      {
+        "level": "进阶",
+        "title": "Healthy Habits",
+        "content": "Staying hydrated is important for health. Drinking enough water can improve mood and energy levels. Aim for at least 8 glasses a day.",
+        "translation": "保持水分对健康很重要。喝足够的水可以提高情绪和能量水平。每天至少喝8杯水。"
+      },
+      {
+        "level": "挑战",
+        "title": "Space Exploration",
+        "content": "Space exploration has advanced significantly. New technologies allow us to study distant planets and moons. It's a fascinating field.",
+        "translation": "太空探索已经取得了显著进展。新技术使我们能够研究遥远的行星和卫星。这是一个迷人的领域。"
+      },
+      {
+        "level": "入门",
+        "title": "Cultural Exchange",
+        "content": "Cultural exchange is important for understanding different perspectives. Learning about other cultures can broaden our horizons.",
+        "translation": "文化交流对于理解不同的观点很重要。了解其他文化可以拓宽我们的视野。"
+      },
+      {
+        "level": "进阶",
+        "title": "Meditation Techniques",
+        "content": "Meditation can reduce stress and improve focus. Techniques like mindfulness and deep breathing are effective.",
+        "translation": "冥想可以减少压力并提高专注力。正念和深呼吸等技巧很有效。"
+      },
+      {
+        "level": "挑战",
+        "title": "Ocean Conservation",
+        "content": "Protecting oceans is crucial for our planet. Reducing plastic waste and supporting marine life are important steps.",
+        "translation": "保护海洋对我们的地球至关重要。减少塑料废物和支持海洋生物是重要的步骤。"
+      },
+      {
+        "level": "入门",
+        "title": "Cooking with Spices",
+        "content": "Cooking with spices adds flavor to food. Spices like turmeric and cumin have health benefits too.",
+        "translation": "用香料烹饪可以为食物增加风味。像姜黄和孜然这样的香料也有健康益处。"
+      },
+      {
+        "level": "进阶",
+        "title": "World Cuisine",
+        "content": "World cuisine offers a variety of flavors. Trying different dishes can be an exciting culinary adventure.",
+        "translation": "世界美食提供了各种风味。尝试不同的菜肴可以是一次令人兴奋的烹饪冒险。"
+      },
+      {
+        "level": "挑战",
+        "title": "Quantum Computing",
+        "content": "Quantum computing is a new field with great potential. It could revolutionize fields like medicine and finance.",
+        "translation": "量子计算是一个具有巨大潜力的新领域。它可能会彻底改变医学和金融等领域。"
+      }
     ]
   },
-  "updatedAt": "2026-09-16T11:23:00+08:00"
+  "updatedAt": "2026-09-19T20:54:00+08:00"
 }
