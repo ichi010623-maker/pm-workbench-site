@@ -1,0 +1,248 @@
+#!/usr/bin/env node
+// 云端每日编排器：生成知识卡+资讯+AIHOT → 升版本 → 跑测试 → 回写主库(GitHub) → GitHub Pages 部署
+// 用法: node cloud/run_daily.js [repoDir] [YYYY-MM-DD]
+// 环境变量: CLOUD=1(云端/CI), GH_TOKEN/GH_REPO(部署 GitHub Pages 必), ZHIPU_API_KEY(生成必)
+const fs = require("fs");
+const path = require("path");
+const { execSync, spawnSync } = require("child_process");
+const knowGen = require("./gen_knowledge_llm");
+const newsGen = require("./gen_news_llm");
+const readingGen = require("./gen_reading_llm");
+const summaryGen = require("./gen_news_summary_llm");
+const netlify = require("./deploy_netlify");
+const githubPages = require("./deploy_github_pages");
+
+function todayStr() { return new Date().toISOString().slice(0, 10); }
+function bjTodayStr() { return new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10); }
+
+/**
+ * 版本号升级：统一委托 cloud/bump_version.js（唯一真值实现）。
+ * 覆盖范围：index.html 的 <title> + 全部 ?v= + &b= 计数器 + CSS style.vX.css?v= 计数器，
+ *          js/app.js 的 APP_VERSION，sw.js 的 CACHE_VERSION。
+ * 历史遗留：这里原有一份只改 3 个文件的旧实现，漏掉 CSS ?v= 与 &b=，
+ *          导致「改了 CSS 但设备仍命中旧样式缓存」，故改为委托。
+ */
+function bumpVersion(BASE) {
+  const idx = path.join(BASE, "index.html");
+  const m = fs.readFileSync(idx, "utf8").match(/<title>[^<]*v(\d+\.\d+\.\d+)<\/title>/);
+  if (!m) throw new Error("无法解析当前版本（index.html <title>）");
+  const [maj, min, pat] = m[1].split(".").map(Number);
+  const nv = `${maj}.${min}.${pat + 1}`;
+  execSync(`${JSON.stringify(process.execPath)} ${JSON.stringify(path.join(__dirname, "bump_version.js"))} ${nv}`, { cwd: BASE, stdio: "inherit" });
+  console.log(`[version] ${m[1]} → ${nv}`);
+  return nv;
+}
+
+/** 收集 data/lang_read_mag*.json 与 data/lang_read_ted*.json（分册数量会随素材增长） */
+function readAssetFiles(BASE) {
+  const dir = path.join(BASE, "data");
+  const out = [];
+  try {
+    for (const f of fs.readdirSync(dir)) {
+      if (/^lang_read_(mag|ted)(_[a-z]+)?\.json$/.test(f)) out.push("data/" + f);
+    }
+  } catch (_) {}
+  return out;
+}
+
+function runTests(BASE) {
+  try {
+    execSync("node tests/knowledge.test.js", { cwd: BASE, stdio: "inherit" });
+    execSync("node tests/aihot.test.js", { cwd: BASE, stdio: "inherit" });
+    console.log("[tests] 通过");
+    return true;
+  } catch (e) {
+    console.error("[tests] 失败，中止部署");
+    return false;
+  }
+}
+
+// 把生成的内容提交回主库（GitHub）。Actions 通过 actions/checkout 的 GITHUB_TOKEN 获得 push 权限。
+async function gitPush(BASE, msg, files) {
+  try {
+    const spec = (files && files.length) ? files.map((f) => JSON.stringify(f)).join(" ") : "-A";
+    execSync("git add " + spec, { cwd: BASE, stdio: "inherit" });
+    execSync("git commit -q -m '" + msg + "'", { cwd: BASE, stdio: "inherit" });
+    execSync("git push -q origin main", { cwd: BASE, stdio: "inherit" });
+    console.log("[git] 已推送主库");
+  } catch (e) {
+    // 云端/CI 模式下回写主库是必需的（次日 checkout 需要最新数据），失败即报错中止
+    console.error("[git] 推送主库失败:", e.message);
+    throw e;
+  }
+}
+
+function ensureEdgeone(BASE) {
+  // 优先：本地打包的 /opt 层 或 项目内
+  const candidates = [
+    path.join(BASE, "node_modules", ".bin", "edgeone"),
+    "/opt/node_modules/.bin/edgeone"
+  ];
+  for (const c of candidates) if (fs.existsSync(c)) return c;
+  // 云端兜底：运行时安装到 /tmp/eo（免 Layer/COS）
+  // SCF 的 HOME 指向不可写的 /home/qcloud，必须重定向到 /tmp
+  const dir = "/tmp/eo";
+  fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync("/tmp/npm-cache", { recursive: true });
+  const bin = path.join(dir, "node_modules", ".bin", "edgeone");
+  if (!fs.existsSync(bin)) {
+    console.log("[deploy] 运行时安装 edgeone CLI ...");
+    const env = { ...process.env, HOME: "/tmp", npm_config_cache: "/tmp/npm-cache" };
+    const r = spawnSync("npm", ["install", "edgeone", "--prefix", dir, "--no-audit", "--no-fund"], { cwd: dir, env, stdio: "inherit" });
+    if (r.status !== 0) throw new Error("edgeone 安装失败: npm exit " + r.status);
+  }
+  return bin;
+}
+
+async function deployGitHubPages(BASE) {
+  if (!process.env.GH_TOKEN || !process.env.GH_REPO) {
+    console.warn("[deploy] 云端模式：缺少 GH_TOKEN/GH_REPO，跳过 GitHub 部署（内容已回写主库）");
+    return false;
+  }
+  try {
+    const url = await githubPages.deploy(BASE, process.env.GH_REPO, process.env.GH_TOKEN);
+    if (url) console.log("[deploy] GitHub Pages 已上线: " + url);
+    return true;
+  } catch (e) {
+    console.warn("[deploy] GitHub Pages 部署失败:", e.message);
+    return false;
+  }
+}
+
+async function deployEdgeOne(BASE) {
+  // 云端模式：主部署通道 = GitHub Pages（免费托管、无额度限制、可访问）
+  if (process.env.CLOUD === "1") {
+    const ok = await deployGitHubPages(BASE);
+    if (!ok) {
+      console.warn("[deploy] 主部署失败——内容已回写主库，可在本地手动补救（node cloud/deploy_github_pages.js）。");
+    }
+    return;
+  }
+  // 本地/手动模式：EdgeOne CLI 兜底（失败仅告警）
+  const token = process.env.EDGEONE_TOKEN;
+  if (!token) { console.warn("[deploy] 无 EDGEONE_TOKEN，跳过 CLI 部署"); return; }
+  let cmd;
+  try { cmd = ensureEdgeone(BASE); }
+  catch (e) { console.warn("[deploy] edgeone CLI 不可用，跳过:", e.message); return; }
+  const env = { ...process.env,
+    TENCENTCLOUD_SECRET_ID: process.env.TENCENTCLOUD_SECRET_ID || "",
+    TENCENTCLOUD_SECRET_KEY: process.env.TENCENTCLOUD_SECRET_KEY || "" };
+  const r = spawnSync(cmd, [
+    "makers", "deploy", BASE, "-n", "pm-workbench",
+    "-t", token, "-e", "production", "-a", "global"
+  ], { cwd: BASE, env, stdio: "inherit" });
+  if (r.status !== 0) console.warn("[deploy] EdgeOne CLI 部署未完成(exit " + r.status + ")");
+  else console.log("[deploy] EdgeOne CLI 部署完成");
+}
+
+// 收尾：升版本→测试→回写主库(GitHub)→部署（daily 与 news 共用）
+async function finish(BASE, DATE, nv, CLOUD) {
+  if (!runTests(BASE)) throw new Error("测试未通过，已中止");
+  const changed = [
+    "data/knowledge.json", "data/news.json", "data/news-archive.json", "data/aihot.json",
+    "data/lang_reading.json", "data/news_summary.json", "index.html", "js/app.js", "sw.js",
+    "css/style.v5.9.156.css"
+  ].concat(readAssetFiles(BASE)).filter((f) => fs.existsSync(path.join(BASE, f)));
+  const msg = `auto: v${nv} (${DATE})`;
+  // 云端/CI 模式：把生成内容回写主库（GitHub），保证次日 checkout 基于最新数据
+  if (CLOUD) {
+    await gitPush(BASE, msg, changed);
+  }
+  await deployEdgeOne(BASE);
+}
+
+async function main(baseArg, dateArg) {
+  const BASE = baseArg || process.argv[2] || path.join(__dirname, "..");
+  const DATE = dateArg || process.argv[3] || todayStr();
+  const CLOUD = process.env.CLOUD === "1";
+
+  console.log(`[run_daily] BASE=${BASE} DATE=${DATE} CLOUD=${CLOUD}`);
+
+  // 1. 生成（知识卡 / 资讯 / 精读 10 篇 / AIHOT）
+  // 精读按北京时间切日（App 端 lgBjToday 同口径），知识卡/资讯仍按 UTC 日期
+  const k = await knowGen.main(DATE, BASE);
+  const nw = await newsGen.main(DATE, BASE);
+  try { await readingGen.main(bjTodayStr(), BASE); } catch (e) { console.warn("[reading] 生成失败(非致命):", e.message); }
+  try {
+    spawnSync("node", [path.join(BASE, "scripts", "fetch_aihot_daily.js")], { cwd: BASE, stdio: "inherit" });
+    console.log("[aihot] 抓取完成");
+  } catch (e) { console.warn("[aihot] 抓取失败(非致命):", e.message); }
+
+  // 2. 升版本 → 3/4/5. 测试+同步+部署
+  const nv = bumpVersion(BASE);
+  await finish(BASE, DATE, nv, CLOUD);
+  console.log(`[run_daily] 完成 ${DATE} → v${nv}`);
+}
+
+// 12:00 / 18:00 资讯刷新：仅重抓当日资讯（覆盖旧资讯），再升版本部署
+async function mainNews(baseArg, dateArg) {
+  const BASE = baseArg || process.argv[2] || path.join(__dirname, "..");
+  const DATE = dateArg || process.argv[3] || todayStr();
+  const CLOUD = process.env.CLOUD === "1";
+
+  console.log(`[run_news] BASE=${BASE} DATE=${DATE} CLOUD=${CLOUD}（当日资讯刷新）`);
+  const nw = await newsGen.main(DATE, BASE, { refresh: true });
+  const nv = bumpVersion(BASE);
+  await finish(BASE, DATE, nv, CLOUD);
+  console.log(`[run_news] 完成 ${DATE} 资讯刷新 → v${nv}`);
+}
+
+// 北京时间 0 点后精读刷新：仅生成当日精读（北京时间切日），再升版本部署
+async function mainReading(baseArg, dateArg) {
+  const BASE = baseArg || process.argv[2] || path.join(__dirname, "..");
+  const DATE = dateArg || process.argv[3] || bjTodayStr();
+  const CLOUD = process.env.CLOUD === "1";
+
+  console.log(`[run_reading] BASE=${BASE} DATE=${DATE} CLOUD=${CLOUD}（北京时间精读刷新）`);
+  const rd = await readingGen.main(DATE, BASE);
+  const nv = bumpVersion(BASE);
+  await finish(BASE, DATE, nv, CLOUD);
+  console.log(`[run_reading] 完成 ${DATE} 精读刷新 → v${nv}`);
+}
+
+// 北京时间 08:00 新闻摘要：仅生成当日新闻摘要（北京时间切日），再升版本部署
+async function mainNewsSummary(baseArg, dateArg) {
+  const BASE = baseArg || process.argv[2] || path.join(__dirname, "..");
+  const DATE = dateArg || process.argv[3] || bjTodayStr();
+  const CLOUD = process.env.CLOUD === "1";
+
+  console.log(`[run_newssum] BASE=${BASE} DATE=${DATE} CLOUD=${CLOUD}（北京时间新闻摘要）`);
+  const r = await summaryGen.main(DATE, BASE);
+  const nv = bumpVersion(BASE);
+  await finish(BASE, DATE, nv, CLOUD);
+  console.log(`[run_newssum] 完成 ${DATE} 新闻摘要 → v${nv}`);
+}
+
+// 每周外刊 + TED 素材刷新（语言学习 → 精读模块）
+//   · scripts/fetch_magazines.js：抓 awesome-english-ebooks 最新一期 epub，解析分类正文 → data/lang_read_mag*.json
+//   · scripts/fetch_ted.js：按 TED 话题页采集演讲全文 + 中文字幕，8 大类均衡 → data/lang_read_ted*.json
+// 两个脚本各自幂等（同篇不重复入库），失败仅告警不阻断——库里已有素材仍可用。
+async function mainWeekly(baseArg, dateArg) {
+  const BASE = baseArg || process.argv[2] || path.join(__dirname, "..");
+  const DATE = dateArg || process.argv[3] || todayStr();
+  const CLOUD = process.env.CLOUD === "1";
+
+  console.log(`[run_weekly] BASE=${BASE} DATE=${DATE} CLOUD=${CLOUD}（外刊 + TED 每周刷新）`);
+
+  const steps = [
+    ["外刊", path.join(BASE, "scripts", "fetch_magazines.js"), []],
+    ["TED", path.join(BASE, "scripts", "fetch_ted.js"), ["--limit=64"]]
+  ];
+  for (const [label, script, args] of steps) {
+    if (!fs.existsSync(script)) { console.warn(`[weekly] 缺少脚本 ${script}，跳过 ${label}`); continue; }
+    const r = spawnSync(process.execPath, [script, ...args], {
+      cwd: BASE, stdio: "inherit", env: process.env, timeout: 20 * 60 * 1000
+    });
+    if (r.status !== 0) console.warn(`[weekly] ${label} 刷新未完成(exit ${r.status})，保留库内已有素材`);
+    else console.log(`[weekly] ${label} 刷新完成`);
+  }
+
+  const nv = bumpVersion(BASE);
+  await finish(BASE, DATE, nv, CLOUD);
+  console.log(`[run_weekly] 完成 ${DATE} → v${nv}`);
+}
+
+if (require.main === module) {
+  main().catch((e) => { console.error("ERR", e.message); process.exit(1); });
+}
+module.exports = { main, mainNews, mainReading, mainNewsSummary, mainWeekly, bumpVersion };
