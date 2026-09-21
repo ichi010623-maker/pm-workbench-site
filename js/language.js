@@ -960,7 +960,7 @@ function lgNormalizeLang(e) {
   var def = {
     words: [], notes: [], materials: [], listening: [], wrongList: [], favorites: [],
     packLoaded: {}, bank: [], patterns: [],
-    grammar: { builtin: [], custom: [], customSeen: 0, lastViewedId: null },
+    grammar: { builtin: [], custom: [], customSeen: {}, lastViewedId: null },
     plan: { template: "commute", daily: 5, days: {} },
     stats: { studyLog: {}, totalSeconds: 0, learnedCount: 0, wrongTypes: {}, reviewCount: 0 },
     streak: 0, lastStudyDate: null, level: 0,
@@ -976,7 +976,7 @@ function lgNormalizeLang(e) {
   });
   if (!e.grammar.builtin) e.grammar.builtin = [];
   if (!e.grammar.custom) e.grammar.custom = [];
-  if (typeof e.grammar.customSeen !== "number") e.grammar.customSeen = 0;
+  if (!e.grammar.customSeen || typeof e.grammar.customSeen !== "object") e.grammar.customSeen = {};
   if (typeof e.grammar.lastViewedId !== "string") e.grammar.lastViewedId = null;
   if (!e.stats.studyLog) e.stats.studyLog = {};
   if (!e.stats.wrongTypes) e.stats.wrongTypes = {};
@@ -993,7 +993,7 @@ function langGet(code) {
       bank: [],             // 场景词包展开后的词
       patterns: [],         // 句式库（精读「划句式」的产出）
       // v5.9.172：语法库——builtin（系统内置基础语法，按语种）；custom（用户自补语法项）
-      grammar: { builtin: [], custom: [], customSeen: 0, lastViewedId: null },
+      grammar: { builtin: [], custom: [], customSeen: {}, lastViewedId: null },
       plan: { template: "commute", daily: 5, days: {} },   // days: { date: [{t, done}] }
       stats: { studyLog: {}, totalSeconds: 0, learnedCount: 0, wrongTypes: {}, reviewCount: 0 },
       streak: 0, lastStudyDate: null, level: 0,
